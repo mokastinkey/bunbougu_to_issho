@@ -4,7 +4,7 @@
 文房具投稿アプリ
 
 ### サイトテーマ
-*他ユーザの投稿を見ることによって、多くの人が自分に合う文房具と出会えるようにしたい。*
+*他ユーザの投稿を見ることによって、多くの人が自分に合う文房具と出会えるようにしたい。*  
 *文房具を身近に感じられるように。*
 
 ### テーマを選んだ理由
@@ -20,7 +20,7 @@
 学生/ビジネスマン/定年退職された方まで、幅広く(性別は関係なし)
 
 ### 主な利用シーン
-文房具購入前
+文房具の購入前
 
 ## 設計書
 
@@ -30,7 +30,7 @@ https://docs.google.com/spreadsheets/d/1Q3YUdjNgbRzPWMG-0cvqm028_jr5qCipmBf4lfNa
 ## 開発環境
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
-- フレームワーク：Ruby on Rails
+- フレームワーク：Ruby on Rails 5.2.6
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
