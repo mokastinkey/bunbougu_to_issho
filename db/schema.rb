@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_29_090523) do
+ActiveRecord::Schema.define(version: 2021_08_29_121217) do
+
+  create_table "bungu_images", force: :cascade do |t|
+    t.integer "post_bungu_id", null: false
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
