@@ -7,4 +7,6 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 10 }
   validates :email, presence: true, uniqueness: true
   
+  has_many :post_bungus, dependent: :destroy
+  
 end
