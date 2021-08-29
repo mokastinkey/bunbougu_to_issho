@@ -1,0 +1,2 @@
+class PostBungu < ApplicationRecord
+end
