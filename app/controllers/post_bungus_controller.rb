@@ -1,0 +1,2 @@
+class PostBungusController < ApplicationController
+end
