@@ -1,0 +1,2 @@
+class BunguImage < ApplicationRecord
+end
