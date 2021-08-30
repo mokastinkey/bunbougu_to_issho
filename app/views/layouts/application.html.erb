@@ -14,7 +14,7 @@
       <% if user_signed_in? %>
         <ul>
           <li><%= link_to "TOP", root_path %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
         </ul>
       <% else %>
         <ul>
