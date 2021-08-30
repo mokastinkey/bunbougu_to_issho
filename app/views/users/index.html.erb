@@ -1,0 +1,5 @@
+<% @users.each do |user| %>
+  <div>
+    <%= attachment_image_tag user, :profile_image, format: 'jpeg' %>
+  </div>
+<% end %>

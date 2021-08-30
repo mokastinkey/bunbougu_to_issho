@@ -10,6 +10,6 @@ User.create!(
   nickname: 'テスト',
   email: 'test@test.com',
   password: 'testtest',
-  profile_image_id: File.open("./app/assets/images/test.jpg"),
+  profile_image: File.open("./app/assets/images/test.jpg"),
   self_introduction: 'これはテストです。'
 )
