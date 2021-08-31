@@ -30,3 +30,16 @@ PostBungu.create!(
    place: 'ロフト渋谷'
 )
 
+BunguImage.create!(
+  [
+    {
+      post_bungu_id: 1,
+      image: File.open('./app/assets/images/test_bungu1.jpeg')
+    },
+    {
+      post_bungu_id: 1,
+      image: File.open('./app/assets/images/test_bungu2.jpg')
+    }
+  ]
+)
+
