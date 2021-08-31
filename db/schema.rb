@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_072017) do
+ActiveRecord::Schema.define(version: 2021_08_31_072857) do
 
   create_table "bungu_images", force: :cascade do |t|
     t.integer "post_bungu_id", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_072017) do
     t.integer "user_id"
     t.integer "genre_id"
     t.string "bungu_name"
-    t.string "manufacturer"
+    t.integer "manufacturer"
     t.string "catchphrase"
     t.float "rate"
     t.text "thought"
