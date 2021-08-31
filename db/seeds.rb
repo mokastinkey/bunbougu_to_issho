@@ -13,3 +13,7 @@ User.create!(
   profile_image: File.open("./app/assets/images/test.jpg"),
   self_introduction: 'これはテストです。'
 )
+
+Genre.create!(
+  name: 'ボールペン'
+)
