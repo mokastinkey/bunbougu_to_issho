@@ -17,3 +17,16 @@ User.create!(
 Genre.create!(
   name: 'ボールペン'
 )
+
+PostBungu.create!(
+   user_id: 1,
+   genre_id: 1,
+   bungu_name: '文房具1',
+   manufacturer: 'パイロット',
+   catchphrase: '文房具1はすごい!',
+   rate: 5,
+   thought: 'テスト文房具の良さを語ります。',
+   price: 600,
+   place: 'ロフト渋谷'
+)
+
