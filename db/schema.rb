@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_29_121217) do
+ActiveRecord::Schema.define(version: 2021_08_31_072017) do
 
   create_table "bungu_images", force: :cascade do |t|
     t.integer "post_bungu_id", null: false
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_08_29_121217) do
     t.string "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "other_manufacturer"
   end
 
   create_table "users", force: :cascade do |t|
