@@ -19,6 +19,7 @@ class PostBungusController < ApplicationController
       :bungu_images_images,
       :thought,
       :manufacturer,
+      :other_manufacturer,
       :price,
       :place
     )

@@ -6,5 +6,41 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(
+  nickname: 'テスト',
+  email: 'test@test.com',
+  password: 'testtest',
+  profile_image: File.open("./app/assets/images/test.jpg"),
+  self_introduction: 'これはテストです。'
+)
+
+Genre.create!(
+  name: 'ボールペン'
+)
+
+PostBungu.create!(
+   user_id: 1,
+   genre_id: 1,
+   bungu_name: '文房具1',
+   manufacturer: 1,
+   catchphrase: '文房具1はすごい!',
+   rate: 5,
+   thought: 'テスト文房具の良さを語ります。',
+   price: 600,
+   place: 'ロフト渋谷'
+)
+
+BunguImage.create!(
+  [
+    {
+      post_bungu_id: 1,
+      image: File.open('./app/assets/images/test_bungu1.jpeg')
+    },
+    {
+      post_bungu_id: 1,
+      image: File.open('./app/assets/images/test_bungu2.jpg')
+    }
+  ]
+)
 
 
