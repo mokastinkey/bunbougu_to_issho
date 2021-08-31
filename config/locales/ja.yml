@@ -1,0 +1,10 @@
+ja:
+  enums:
+    post_bungu:
+      manufacturer:
+        kokuyo: 'コクヨ'
+        plus: 'プラス'
+        zebra: 'ゼブラ'
+        mitsubishi_pencil: '三菱鉛筆'
+        pilot: 'パイロット'
+        pentel: 'ぺんてる'

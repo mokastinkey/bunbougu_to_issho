@@ -7,7 +7,9 @@
   <h4>使い心地や良い点など</h4>
   <%= f.text_area :thought %>
   <h4>メーカー</h4>
-  <%= f.text_field :manufacturer %>
+  <% @post_bungu.manufacturers.each do |manufacturer, value| %>
+    <%= f.radio_button :manufacturer, value %>
+  <% end %>
   <h4>値段</h4>
   <%= f.text_field :price %>
   <h4>購入場所</h4>
