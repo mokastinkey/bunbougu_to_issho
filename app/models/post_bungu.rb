@@ -1,4 +1,7 @@
 class PostBungu < ApplicationRecord
+  before_validation do
+    self.other_manufacturer = nil unless manufacturer == "other"
+  end
 
   belongs_to :user
   belongs_to :genre
@@ -12,7 +15,18 @@ class PostBungu < ApplicationRecord
     zebra: 2,
     mitsubishi_pencil: 3,
     pilot: 4,
-    pentel: 5
+    pentel: 5,
+    other: 6
   }
+
+
+  validates :other_manufacturer, length: { maximum: 20 }, presence: true, if: :others_manufacturer?
+
+  def others_manufacturer?
+    manufacturer == "other"
+  end
+
+
+
 
 end

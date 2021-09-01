@@ -4,6 +4,10 @@
   <%= f.text_field :catchphrase, autofocus: true %>
   <h4>画像</h4>
   <%= f.attachment_field :bungu_images_images, multiple: true %>
+  <h4>商品名</h4>
+  <%= f.text_field :bungu_name %>
+  <h4>ジャンル</h4>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
   <h4>使い心地や良い点など</h4>
   <%= f.text_area :thought %>
   <h4>メーカー</h4>
@@ -15,9 +19,10 @@
       </label>
     </div>
   <% end %>
+  <div class="other_manufacturer_text"><%= f.text_field :other_manufacturer %></div>
   <h4>値段</h4>
   <%= f.text_field :price %>
   <h4>購入場所</h4>
   <%= f.text_field :place %>
-  <%= PostBungu.manufacturers_i18n %>
+  <%= f.submit '投稿する' %>
 <% end %>
