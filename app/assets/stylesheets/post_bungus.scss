@@ -5,8 +5,11 @@
 .bungu {
   width: 70%;
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .bungu-photo img {
   height: 300px;
+  object-fit: cover;
+  width: 100%;
 }
