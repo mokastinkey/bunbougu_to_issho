@@ -1,4 +1,5 @@
 class PostBungusController < ApplicationController
+  before_action :correct_user, only: [:create, :edit, :update]
 
   def index
     @post_bungus = PostBungu.all
@@ -51,6 +52,13 @@ class PostBungusController < ApplicationController
       :place,
       bungu_images_images: []
     )
+  end
+
+  def correct_user
+    post_bungu = PostBungu.find(params[:id])
+    if current_user.id != post_bungu.user_id
+      redirect_to post_bungus_path
+    end
   end
 
 end
