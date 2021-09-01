@@ -7,11 +7,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(
-  nickname: 'テスト',
-  email: 'test@test.com',
-  password: 'testtest',
-  profile_image: File.open("./app/assets/images/test.jpg"),
-  self_introduction: 'これはテストです。'
+  [
+    {
+      nickname: 'テスト1さん',
+      email: 'test1@test.com',
+      password: 'testtest',
+      profile_image: File.open("./app/assets/images/test.jpg"),
+      self_introduction: 'これはテストです1。'
+    },
+    {
+      nickname: 'テスト2さん',
+      email: 'test2@test.com',
+      password: 'testtest',
+      profile_image: File.open("./app/assets/images/test.jpg"),
+      self_introduction: 'これはテストです2。'
+    }
+  ]
 )
 
 Genre.create!(
