@@ -1,4 +1,5 @@
 class PostBungusController < ApplicationController
+  # url直打ち防止
   before_action :correct_user, only: [:create, :edit, :update]
 
   def index
