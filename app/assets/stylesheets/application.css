@@ -19,12 +19,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Boku';
-  font-size: 1.4rem;
+  font-size: 0.9rem;
 }
 
 @font-face {
   font-family: 'Boku';
-  src: url('Boku2-Bold.otf') format('opentype');
+  src: url('Boku2-Regular.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
 }
