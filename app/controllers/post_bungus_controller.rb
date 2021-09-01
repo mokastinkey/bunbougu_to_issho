@@ -28,6 +28,13 @@ class PostBungusController < ApplicationController
   end
 
   def update
+    @post_bungu = PostBungu.find(params[:id])
+    @post_bungu.user_id = current_user.id
+    if @post_bungu.update(post_bungu_params)
+      redirect_to post_bungu_path(@post_bungu)
+    else
+      render :edit
+    end
   end
 
   private
