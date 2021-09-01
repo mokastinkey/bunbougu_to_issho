@@ -1,12 +1,16 @@
 <p>文房具投稿一覧画面</p>
-<% @post_bungus.each do |post_bungu| %>
-  <div>
-    <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-      <%= attachment_image_tag bungu_image, :image %>
-    <% end %>
-    <%= post_bungu.catchphrase %>
-    <%= post_bungu.bungu_name %>
-    <%= post_bungu.user.nickname %>
-    <%= link_to '投稿詳細へ', post_bungu_path(post_bungu) %>
-  </div>
-<% end %>
+<div class="container">
+  <% @post_bungus.each do |post_bungu| %>
+    <div class="bungu">
+      <div class="bungu-photo">
+      <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
+        <%= attachment_image_tag bungu_image, :image %>
+      <% end %>
+      </div>
+      <%= post_bungu.catchphrase %>
+      <%= post_bungu.bungu_name %>
+      <%= post_bungu.user.nickname %>
+      <%= link_to '投稿詳細へ', post_bungu_path(post_bungu) %>
+    </div>
+  <% end %>
+</div>
