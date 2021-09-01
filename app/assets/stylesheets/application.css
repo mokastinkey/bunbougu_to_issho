@@ -18,12 +18,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Harenosora';
+  font-family: 'Boku';
+  font-size: 1.4rem;
 }
 
 @font-face {
-  font-family: 'Harenosora';
-  src: url('Harenosora.otf') format('opentype');
-  font-weight: normal;
+  font-family: 'Boku';
+  src: url('Boku2-Bold.otf') format('opentype');
+  font-weight: bold;
   font-style: normal;
 }
