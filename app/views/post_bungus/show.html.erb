@@ -22,4 +22,5 @@
 <%= @post_bungu.place %>
 <% if @post_bungu.user_id == current_user.id %>
   <p><%= link_to '編集する', edit_post_bungu_path(@post_bungu) %></p>
+  <p><%= link_to '削除する', post_bungu_path(@post_bungu), method: :delete %></p>
 <% end %>

@@ -1,6 +1,6 @@
 class PostBungusController < ApplicationController
   # url直打ち防止
-  before_action :correct_user, only: [:create, :edit, :update]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @post_bungus = PostBungu.all
@@ -37,6 +37,12 @@ class PostBungusController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    post_bungu = PostBungu.find(params[:id])
+    post_bungu.destroy
+    redirect_to post_bungus_path
   end
 
   private
