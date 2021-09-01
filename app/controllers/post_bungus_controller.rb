@@ -20,6 +20,7 @@ class PostBungusController < ApplicationController
   end
 
   def show
+    @post_bungu = PostBungu.find(params[:id])
   end
 
   private

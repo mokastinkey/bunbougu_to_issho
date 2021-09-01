@@ -1,1 +1,7 @@
 <p>文房具投稿詳細画面</p>
+
+<% @post_bungu.bungu_images.each do |bungu_image| %>
+  <%= attachment_image_tag bungu_image, :image %>
+<% end %>
+<%= @post_bungu.rate %>
+<%= @post_bungu.created_at.to_s(:datetime_jp) %>
