@@ -19,6 +19,9 @@ class PostBungusController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def post_bungu_params
