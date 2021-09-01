@@ -20,4 +20,6 @@
 <% end %>
 <h4>購入場所</h4>
 <%= @post_bungu.place %>
-<p><%= link_to '編集する', edit_post_bungu_path(@post_bungu) %></p>
+<% if @post_bungu.user_id == current_user.id %>
+  <p><%= link_to '編集する', edit_post_bungu_path(@post_bungu) %></p>
+<% end %>
