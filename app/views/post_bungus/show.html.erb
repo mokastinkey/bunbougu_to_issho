@@ -1,7 +1,23 @@
 <p>文房具投稿詳細画面</p>
-
+<%= @post_bungu.catchphrase %>
+<p></p>
 <% @post_bungu.bungu_images.each do |bungu_image| %>
   <%= attachment_image_tag bungu_image, :image %>
 <% end %>
+<h4>評価</h4>
 <%= @post_bungu.rate %>
+<h4>投稿日</h4>
 <%= @post_bungu.created_at.to_s(:datetime_jp) %>
+<p><%= @post_bungu.bungu_name %></p>
+<%= @post_bungu.price %><sapn>円</span>
+<h4>この文房具、どう?</h4>
+<%= @post_bungu.thought %>
+<h4>メーカー</h4>
+<% if @post_bungu.manufacturer != "other" %>
+  <%= @post_bungu.manufacturer_i18n %>
+<% else %>
+  <%= @post_bungu.other_manufacturer %>
+<% end %>
+<h4>購入場所</h4>
+<%= @post_bungu.place %>
+<p><%= link_to '編集する', edit_post_bungu_path(@post_bungu) %></p>

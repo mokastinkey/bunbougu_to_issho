@@ -23,6 +23,13 @@ class PostBungusController < ApplicationController
     @post_bungu = PostBungu.find(params[:id])
   end
 
+  def edit
+    @post_bungu = PostBungu.find(params[:id])
+  end
+
+  def update
+  end
+
   private
 
   def post_bungu_params
