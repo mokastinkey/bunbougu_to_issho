@@ -57,6 +57,7 @@ class PostBungusController < ApplicationController
       :other_manufacturer,
       :price,
       :place,
+      :rate,
       bungu_images_images: []
     )
   end
