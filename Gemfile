@@ -73,3 +73,6 @@ gem "refile-mini_magick"
 #enum導入
 gem "enum_help"
 gem 'rails-i18n', '~> 5.1'
+
+#jquery導入
+gem 'jquery-rails'
