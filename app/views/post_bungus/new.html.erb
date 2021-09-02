@@ -29,13 +29,13 @@
   <%= f.text_field :place %>
   <%= f.submit '投稿する' %>
 <% end %>
-<!-- raty --
+<!-- raty -->
 <script>
   $('#rate-stars').raty({
     starOn: "<%= asset_path('star-on.png') %>",
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
     half: true,
-    scoreName: 'postbungu[rate]' //登録するモデル名とカラム名を記述
+    scoreName: 'post_bungu[rate]' //登録するモデル名とカラム名を記述
   });
 </script>
