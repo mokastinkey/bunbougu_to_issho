@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_072857) do
+ActiveRecord::Schema.define(version: 2021_09_04_034243) do
 
   create_table "bungu_images", force: :cascade do |t|
     t.integer "post_bungu_id", null: false
@@ -38,6 +38,14 @@ ActiveRecord::Schema.define(version: 2021_08_31_072857) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "other_manufacturer"
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "following_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
