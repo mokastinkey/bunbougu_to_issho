@@ -12,6 +12,7 @@
   <%= f.text_area :thought %>
   <div id="rate-stars">
     <h4>評価</h4>
+    <%= render 'post_bungus/star' %>
   </div>
   <h4>メーカー</h4>
   <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
@@ -29,13 +30,4 @@
   <%= f.text_field :place %>
   <%= f.submit '投稿する' %>
 <% end %>
-<!-- raty -->
-<script>
-  $('#rate-stars').raty({
-    starOn: "<%= asset_path('star-on.png') %>",
-    starOff: "<%= asset_path('star-off.png') %>",
-    starHalf: "<%= asset_path('star-half.png') %>",
-    half: true,
-    scoreName: 'post_bungu[rate]' //登録するモデル名とカラム名を記述
-  });
-</script>
+
