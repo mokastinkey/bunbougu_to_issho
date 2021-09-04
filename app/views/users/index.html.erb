@@ -1,6 +1,6 @@
 <% @users.each do |user| %>
   <div>
-    <p><%= user.nickname %></p>
+    <%= link_to user_path(user) do %><p><%= user.nickname %></p><% end %>
     <%= attachment_image_tag user, :profile_image, format: 'jpeg' %>
     <%= user.self_introduction %>
   </div>

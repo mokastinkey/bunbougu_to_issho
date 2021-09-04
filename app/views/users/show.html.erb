@@ -1,0 +1,14 @@
+<h3><%= @user.nickname %></h3>
+
+<div id='following-count_#{ @user.id }'>
+  <%= link_to "#{ @user.following.count }フォロー中", users_following_path(@user) %>
+</div>
+<div id='follower-count_#{ @user.id }'>
+  <%= link_to "#{ @user.follower.count }フォロワー", users_follower_path(@user) %>
+</div>
+
+<% if user_signed_in? && @user != current_user %>
+  <span id='follow-btn_#{ @user.id }'>
+    <%= render 'users/follow_btn', user: @user %>
+  </span>
+<% end %>
