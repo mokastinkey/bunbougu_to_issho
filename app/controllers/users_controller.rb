@@ -10,13 +10,13 @@ class UsersController < ApplicationController
 
   def following
     #自分がフォローしているユーザー一覧
-    @user  = User.find(params[:user_id])
-    @followings = @user.following_user.where.not(id: current_user.id)
+    user  = User.find(params[:id])
+    @users = user.following_user.where.not(id: current_user.id)
   end
 
-  def followers
+  def follower
     #@userをフォローしているユーザー
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
     @followers = @user.follower_user.where.not(id: current_user.id)
   end
 
