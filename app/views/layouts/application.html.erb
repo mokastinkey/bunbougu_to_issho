@@ -12,7 +12,8 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
+      <%= image_tag 'logo.jpg' %>
       <% if user_signed_in? %>
         <ul>
           <li><%= link_to "TOP", root_path %></li>
