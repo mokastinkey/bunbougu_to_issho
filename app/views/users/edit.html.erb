@@ -1,0 +1,10 @@
+<p>ユーザー編集画面</p>
+<%= form_with model: @user, local: true do |f| %>
+  <h5>ニックネーム</h5>
+  <%= f.text_field :nickname, autofocus: true %>
+  <h5>プロフィール画像</h5>
+  <%= f.attachment_field :profile_image %>
+  <h5>ユーザー紹介</h5>
+  <%= f.text_field :self_introduction %>
+  <%= f.submit "更新する" %>
+<% end %>

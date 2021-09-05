@@ -20,5 +20,23 @@ class UsersController < ApplicationController
     @users = user.follower_user.where.not(id: current_user.id)
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_edit_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def user_edit_params
+    params.require(:user).permit(:nickname, :profile_image, :self_introduction)
+  end
 
 end
