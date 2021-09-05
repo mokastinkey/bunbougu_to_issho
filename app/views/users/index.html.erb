@@ -5,6 +5,7 @@
         <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "100X100" %>
       </div>
       <p><%= link_to user_path(user) do %><%= user.nickname %><% end %></p>
+      <div><span>投稿数:</span><%= user.post_bungus.count %></div>
       <%= user.self_introduction %>
     </div>
   <% end %>
