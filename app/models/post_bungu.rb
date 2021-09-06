@@ -9,7 +9,7 @@ class PostBungu < ApplicationRecord
   #Genreモデルとの関係
   belongs_to :genre
 
-　#PostBunguモデルとの関係
+  #PostBunguモデルとの関係
   has_many :bungu_images, dependent: :destroy
   accepts_attachments_for :bungu_images, attachment: :image
 
