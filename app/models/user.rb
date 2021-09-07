@@ -36,4 +36,27 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_post_bungus, through: :likes, source: :post_bungu
 
+  def own?(post_bungu)
+    id == post_bungu.user_id
+  end
+
+  def like?(post_bungu)
+    like_post_bungus.include?(post_bungu)
+  end
+
+  def liked_by?(post_bungu)
+    likes.where(post_bungu_id: post_bungu).exists?
+  end
+
+  # def like(post_bungu)
+  #   likes.find_by(post_bungu: post_bungu)
+  #   if likes.nil?
+  #     likes.create(post_bungu: post_bungu, user_id: current_user.id)
+  #   end
+  # end
+
+  # def unlike(post_bungu)
+  #   like_post_bungus.delete(post_bungu)
+  # end
+
 end

@@ -76,3 +76,6 @@ gem 'rails-i18n', '~> 5.1'
 
 #jquery導入
 gem 'jquery-rails'
+
+#fontawesome導入
+gem 'font-awesome-sass', '~> 5.13'
