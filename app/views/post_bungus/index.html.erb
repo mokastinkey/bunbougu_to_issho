@@ -1,5 +1,4 @@
-<p>文房具投稿一覧画面</p>
-<div class="container">
+<div class="post-bungu-container">
   <% @post_bungus.each do |post_bungu| %>
     <div class="bungu">
       <div class="bungu-photo">
@@ -8,9 +7,10 @@
       <% end %>
       </div>
       <div class="bungu-info">
-      <%= post_bungu.catchphrase %>
-      <%= post_bungu.bungu_name %>
-      <%= post_bungu.user.nickname %>
+        <p><%= post_bungu.created_at.to_s(:datetime_jp) %></p>
+        <p><%= post_bungu.catchphrase %></p>
+        <p><%= post_bungu.bungu_name %></p>
+        <p><%= post_bungu.user.nickname %></p>
       <%= link_to '投稿詳細へ', post_bungu_path(post_bungu) %>
       </div>
       <div>

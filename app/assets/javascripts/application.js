@@ -16,3 +16,12 @@
 //= require turbolinks
 //= require jquery.raty.js
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function () {
+
+  $(document).ready(function(){
+    $("#nav-button").on("click", function(){
+       $(".sp-nav").slideToggle();
+    });
+  });
+});
