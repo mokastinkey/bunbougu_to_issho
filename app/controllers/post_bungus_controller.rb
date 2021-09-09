@@ -47,6 +47,7 @@ class PostBungusController < ApplicationController
   end
 
   def search
+    selection = params[:sort]
   end
 
   private
