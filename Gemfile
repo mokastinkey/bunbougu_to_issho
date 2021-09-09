@@ -79,3 +79,6 @@ gem 'jquery-rails'
 
 #fontawesome導入
 gem 'font-awesome-sass', '~> 5.13'
+
+#pry-byebugインストール
+gem 'pry-byebug'
