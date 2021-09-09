@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'users/follower/:id', to: 'users#follower', as:'users_follower'
 
   resources :post_bungus
+  get 'search', to: 'post_bungus#search'
 
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'

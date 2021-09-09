@@ -3,6 +3,7 @@ class PostBungusController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
+    @post_bungu = PostBungu.new
     @post_bungus = PostBungu.all
   end
 
@@ -43,6 +44,9 @@ class PostBungusController < ApplicationController
     post_bungu = PostBungu.find(params[:id])
     post_bungu.destroy
     redirect_to post_bungus_path
+  end
+
+  def search
   end
 
   private
