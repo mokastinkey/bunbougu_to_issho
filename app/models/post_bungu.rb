@@ -33,4 +33,16 @@ class PostBungu < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
+  def self.sort(selection)
+    if selection == 'new' then
+      all.order(created_at: :DESC)
+    elsif selection == 'old' then
+      all.order(created_at: :ASC)
+    elsif selection == 'manylikes' then
+      find(Like.group(:post_bungu_id).order(Arel.sql('count(post_bungu_id) desc')).pluck(:post_bungu_id))
+    else
+      find(Like.group(:post_bungu_id).order(Arel.sql('count(post_bungu_id) asc')).pluck(:post_bungu_id))
+    end
+  end
+
 end
