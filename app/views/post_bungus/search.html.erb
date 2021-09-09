@@ -5,8 +5,8 @@
                      ['投稿が古い順', 'old'],
                      ['いいねが多い順', 'manylikes'],
                      ['いいねが少ない順', 'littlelikes'],
-                   ] %>
-<%= f.submit "調べる" %>
+                   ], prompt: "check" %>
+<%= f.submit "並び替える" %>
 <% end %>
 
 <% if @selection == 'new' %>
