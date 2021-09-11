@@ -10,6 +10,9 @@ class User < ApplicationRecord
   #PostBunguモデル
   has_many :post_bungus, dependent: :destroy
   attachment :profile_image
+  
+  #PostCommentモデル
+  has_many :post_comments, dependent: :destroy
 
   #Relationshipモデル
   has_many :following, class_name: 'Relationship', foreign_key: 'following_id', dependent: :destroy

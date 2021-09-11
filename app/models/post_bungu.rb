@@ -28,6 +28,9 @@ class PostBungu < ApplicationRecord
   def others_manufacturer?
     manufacturer == "other"
   end
+  
+  #PostCommentモデル
+  has_many :post_comments, dependent: :destroy
 
   #Likeモデルとの関係
   has_many :likes, dependent: :destroy
