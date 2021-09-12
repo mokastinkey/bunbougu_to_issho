@@ -16,8 +16,12 @@
       <% end %>
     </tbody>
   </table>
-  <!-- キーワード検索 -- !>
-  
+  <!-- キーワード検索 -->
+  <%= form_with url: finder_path, local: :true do |f| %>
+    <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
+    <%= f.text_field :word %>
+    <%= f.submit "検索" %>
+  <% end %>
 
   <!--投稿日時、いいね数でソート-->
   <%= form_with url: post_bungus_path, method: :get, local: true do |f| %>
@@ -54,11 +58,11 @@
       <%= link_to '投稿詳細へ', post_bungu_path(post_bungu) %>
       </div>
       <div>
-        <% if user_signed_in? %>　<!--ログインしているユーザだけが、見ることができる -->
+        <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
           <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
               <p>いいね: <%= post_bungu.likes.count %>ポイント</p>
-          <% else %>　<!--他の人の(currentuser以外の)文房具投稿の場合 -->
-          　<div id="btn_<%= post_bungu.id %>">
+          <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
+            <div id="btn_<%= post_bungu.id %>">
               <% if current_user.liked_by?(post_bungu) %>
                 <%= render 'likes/unlike_button', post_bungu: post_bungu %>
               <% else %>
