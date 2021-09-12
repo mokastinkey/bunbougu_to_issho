@@ -21,9 +21,19 @@
   display: flex;
   flex-wrap: wrap;
   li {
-    width: 33.3%;
+    width: 25%;
     text-align: center;
     border: 1px solid pink;
+    height: 60px;
+    // display: flex;
+    // justify-content: center;
+    a {
+      font-size: 0.8rem;
+    }
+    i {
+      display: block;
+      font-size: 1.5rem;
+    }
   }
 }
 

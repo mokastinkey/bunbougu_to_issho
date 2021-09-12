@@ -1,5 +1,5 @@
 <div class="post-bungu-container">
-  <!-- キーワード検索-->
+  <!-- ジャンル検索-->
   <table class="table table-bordered genre-table">
     <thead>
       <tr>
@@ -16,22 +16,6 @@
       <% end %>
     </tbody>
   </table>
-  <!-- キーワード検索 -->
-  <%= form_with url: finder_path, local: :true do |f| %>
-    <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
-    <%= f.text_field :word %>
-    <%= f.submit "検索" %>
-  <% end %>
-
-  <!--投稿日時、いいね数でソート-->
-  <%= form_with url: post_bungus_path, method: :get, local: true do |f| %>
-    <%= f.select :key, [ ['投稿が新しい順', 'new'],
-                         ['投稿が古い順', 'old'],
-                         ['いいねが多い順', 'manylikes'],
-                         ['いいねが少ない順', 'littlelikes'],
-                       ], prompt: "check" %>
-    <%= f.submit "並び替える", class: "sort-box"%>
-  <% end %>
 
   <% if @selection == 'new' %>
     <p>投稿が新しい文房具順</p>
@@ -73,5 +57,12 @@
         <% end %>
       </div>
     </div>
+  <% end %>
+
+  <!-- キーワード検索 -->
+  <%= form_with url: finder_path, local: :true do |f| %>
+    <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
+    <%= f.text_field :word %>
+    <%= f.submit "検索" %>
   <% end %>
 </div>

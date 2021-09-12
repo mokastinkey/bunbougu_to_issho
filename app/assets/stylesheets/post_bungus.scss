@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post-bungu-container {
-  padding-top: 7rem;
+  // padding-top: 7rem;
 }
 
 .bungu {
@@ -35,4 +35,9 @@ select#key, #post_bungu_key {
 .sort-box {
   border-radius: 100px;
   background-color: pink;
+}
+
+// ジャンル機能
+.genre-table {
+  display: none;
 }

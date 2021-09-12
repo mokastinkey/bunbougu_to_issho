@@ -22,19 +22,19 @@
       <div class="sub-head">
         <% if user_signed_in? %>
           <ul>
-            <li><%= link_to "TOP", root_path %></li>
-            <li><%= link_to "About", homes_about_path %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-            <li><%= link_to "ユーザ一覧", users_path %></li>
-            <li><%= link_to "文房具投稿一覧", post_bungus_path %></li>
-            <li><%= link_to "文房具新規投稿", new_post_bungu_path %></li>
+            <li><%= link_to "TOP", root_path %><i class="fas fa-home"></i></li>
+            <li><%= link_to "About", homes_about_path %><i class="fas fa-pencil-alt"></i></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %><i class="fas fa-sign-out-alt"></i></li>
+            <li><%= link_to "ユーザ一覧", users_path %><i class="fas fa-user-friends"></i></li>
+            <li><%= link_to "文房具投稿一覧", post_bungus_path %><i class="fas fa-user-friends"></i></li>
+            <li><%= link_to "文房具新規投稿", new_post_bungu_path %><i class="far fa-edit"></i></li>
           </ul>
         <% else %>
           <ul>
-            <li><%= link_to "TOP", root_path %></li>
-            <li><%= link_to "新規登録", new_user_registration_path %></li>
-            <li><%= link_to "ログイン", new_user_session_path %></li>
-            <li><%= link_to "About", homes_about_path %></li>
+            <li><%= link_to "TOP", root_path %><i class="fas fa-home"></i></li>
+            <li><%= link_to "新規登録", new_user_registration_path %><i class="fas fa-user-plus"></i></li>
+            <li><%= link_to "ログイン", new_user_session_path %><i class="fas fa-sign-in-alt"></i></li>
+            <li><%= link_to "About", homes_about_path %><i class="fas fa-pencil-alt"></i></li>
           </ul>
         <% end %>
       </div>

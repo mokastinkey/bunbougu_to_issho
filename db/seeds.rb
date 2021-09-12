@@ -9,18 +9,18 @@
 User.create!(
   [
     {
-      nickname: 'テスト1さん',
+      nickname: 'テスト1',
       email: 'test1@test.com',
       password: 'testtest',
       profile_image: File.open("./app/assets/images/test.jpg"),
-      self_introduction: 'これはテストです1。'
+      self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
     },
     {
-      nickname: 'テスト2さん',
+      nickname: 'テスト2',
       email: 'test2@test.com',
       password: 'testtest',
       profile_image: File.open("./app/assets/images/test.jpg"),
-      self_introduction: 'これはテストです2。'
+      self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
     }
   ]
 )
@@ -46,15 +46,52 @@ Genre.create!(
 )
 
 PostBungu.create!(
-   user_id: 1,
-   genre_id: 1,
-   bungu_name: '文房具1',
-   manufacturer: 1,
-   catchphrase: '文房具1はすごい!',
-   rate: 5,
-   thought: 'テスト文房具の良さを語ります。',
-   price: 600,
-   place: 'ロフト渋谷'
+  [
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 2,
+      genre_id: 7,
+      bungu_name: 'ロルバーン手帳',
+      manufacturer: 2,
+      catchphrase: '表紙が可愛い！書きたくなる手帳',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 1210,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 2,
+      genre_id: 7,
+      bungu_name: 'ロルバーン手帳',
+      manufacturer: 2,
+      catchphrase: '表紙が可愛い！書きたくなる手帳',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 1210,
+      place: 'ロフト渋谷'
+    }
+  ]
 )
 
 BunguImage.create!(
