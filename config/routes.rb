@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get 'finders/finder'
   get 'genres/show'
-  root to: 'homes#top'
+  root to: 'post_bungus#index'
+  get 'homes/about'
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update]
 
