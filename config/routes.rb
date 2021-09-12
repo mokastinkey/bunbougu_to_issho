@@ -15,7 +15,11 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
   end
 
+  #ジャンル検索
   resources :genres, only: [:show]
+  #キーワード検索
+  get 'finder' => "finders#finder"
+
 
   # get 'search', to: 'post_bungus#search'
 
