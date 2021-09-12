@@ -50,6 +50,11 @@ class User < ApplicationRecord
   def liked_by?(post_bungu)
     likes.where(post_bungu_id: post_bungu).exists?
   end
+  
+  #キーワード検索
+  def self.looks(words)
+    @users = User.where("name LIKE ?", "%#{words}%")
+  end
 
   # def like(post_bungu)
   #   likes.find_by(post_bungu: post_bungu)
