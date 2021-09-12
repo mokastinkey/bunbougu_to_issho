@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'genres/show'
   root to: 'homes#top'
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update]
