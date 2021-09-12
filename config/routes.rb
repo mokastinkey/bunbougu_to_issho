@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :post_bungus do
     resources :post_comments, only: [:create, :destroy]
   end
+
+  resources :genres, only: [:show]
+
   # get 'search', to: 'post_bungus#search'
 
   post 'like/:id' => 'likes#create', as: 'create_like'

@@ -1,2 +1,40 @@
-<h1>Genres#show</h1>
-<p>Find me in app/views/genres/show.html.erb</p>
+ <!--ジャンル選択のサイドバー render "genres_sidebar", genres: @genres %> -->
+
+<!-- ジャンル選択のサイドバー -->
+<div class="item-index">
+  <h3>ジャンル別商品一覧</h3>
+
+  <!--<% @genre.post_bungus.each do |post_bungu| %>-->
+    <div class="bungu">
+      <div class="bungu-photo">
+      <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
+        <%= attachment_image_tag bungu_image, :image %>
+      <% end %>
+      </div>
+      <div class="bungu-info">
+        <p><%= post_bungu.created_at.to_s(:datetime_jp) %></p>
+        <p><%= post_bungu.catchphrase %></p>
+        <p><%= post_bungu.bungu_name %></p>
+        <p><%= post_bungu.user.nickname %></p>
+        <p><%= post_bungu.genre.name %></p>
+      <%= link_to '投稿詳細へ', post_bungu_path(post_bungu) %>
+      </div>
+      <div>
+        <% if user_signed_in? %>　<!--ログインしているユーザだけが、見ることができる -->
+          <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
+              <p>いいね: <%= post_bungu.likes.count %>ポイント</p>
+          <% else %>　<!--他の人の(currentuser以外の)文房具投稿の場合 -->
+          　<div id="btn_<%= post_bungu.id %>">
+              <% if current_user.liked_by?(post_bungu) %>
+                <%= render 'likes/unlike_button', post_bungu: post_bungu %>
+              <% else %>
+                <%= render 'likes/like_button', post_bungu: post_bungu %>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

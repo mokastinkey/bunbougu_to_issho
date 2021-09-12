@@ -3,14 +3,13 @@ class PostBungusController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-
-    # @post_bungu = PostBungu.new
     @selection = params[:key]
     if not @selection
       @post_bungus = PostBungu.all
     else
       @post_bungus = PostBungu.sort(@selection)
     end
+    @genres = Genre.all
   end
 
   def new
