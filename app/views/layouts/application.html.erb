@@ -13,27 +13,36 @@
 
   <body>
     <header class="header">
-      <%= image_tag 'logo.jpg' %>
-      <div id="nav-button" class="nav-button">
-        <i class="fas fa-bars"></i>
+      <div class="main-head">
+        <%= image_tag 'logo.jpg' %>
+        <div id="nav-button" class="nav-button">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div class="sub-head">
+        <% if user_signed_in? %>
+          <ul>
+            <li><%= link_to "TOP", root_path %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to "ユーザ一覧", users_path %></li>
+            <li><%= link_to "文房具投稿一覧", post_bungus_path %></li>
+            <li><%= link_to "文房具新規投稿", new_post_bungu_path %></li>
+          </ul>
+        <% else %>
+          <ul>
+            <li><%= link_to "TOP", root_path %></li>
+            <li><%= link_to "新規登録", new_user_registration_path %></li>
+            <li><%= link_to "ログイン", new_user_session_path %></li>
+          </ul>
+        <% end %>
       </div>
       <nav class="sp-nav">
         <div class="nav-inner">
-          <% if user_signed_in? %>
-            <ul class="sp-nav-list">
-              <li><%= link_to "TOP", root_path %></li>
-              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-              <li><%= link_to "ユーザ一覧", users_path %></li>
-              <li><%= link_to "文房具投稿一覧", post_bungus_path %></li>
-              <li><%= link_to "文房具新規投稿", new_post_bungu_path %></li>
-            </ul>
-          <% else %>
-            <ul class="sp-nav-list">
-              <li><%= link_to "TOP", root_path %></li>
-              <li><%= link_to "新規登録", new_user_registration_path %></li>
-              <li><%= link_to "ログイン", new_user_session_path %></li>
-            </ul>
-          <% end %>
+          <ul class="sp-nav-list">
+            <% @genres.each do |genre| %>
+              <li><%= link_to genre.name, genre_path(genre.id) %></li>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </header>

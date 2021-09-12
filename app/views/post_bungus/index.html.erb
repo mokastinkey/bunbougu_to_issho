@@ -1,8 +1,22 @@
 <div class="post-bungu-container">
   <!-- キーワード検索-->
-  <% @genres.each do |genre| %>
-    <%= link_to genre.name, genre_path(genre.id) %>
-  <% end %>
+  <table class="table table-bordered genre-table">
+    <thead>
+      <tr>
+        <th>ジャンル検索</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @genres.each do |genre| %>
+        <tr>
+          <td>
+            <%= link_to genre.name, genre_path(genre.id)%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
   <!--投稿日時、いいね数でソート-->
   <%= form_with url: post_bungus_path, method: :get, local: true do |f| %>
     <%= f.select :key, [ ['投稿が新しい順', 'new'],
