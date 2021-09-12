@@ -52,8 +52,8 @@ class User < ApplicationRecord
   end
   
   #キーワード検索
-  def self.looks(words)
-    @users = User.where("name LIKE ?", "%#{words}%")
+  def self.looks(word)
+    where("nickname LIKE ?", "%#{word}%")
   end
 
   # def like(post_bungu)

@@ -28,7 +28,7 @@ class PostBungu < ApplicationRecord
   def others_manufacturer?
     manufacturer == "other"
   end
-  
+
   #PostCommentモデル
   has_many :post_comments, dependent: :destroy
 
@@ -47,5 +47,11 @@ class PostBungu < ApplicationRecord
       find(Like.group(:post_bungu_id).order(Arel.sql('count(post_bungu_id) asc')).pluck(:post_bungu_id))
     end
   end
+
+  #キーワード検索
+  def self.looks(word)
+    where("bungu_name LIKE ?", "%#{word}%")
+  end
+
 
 end

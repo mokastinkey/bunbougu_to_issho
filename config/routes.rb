@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :genres, only: [:show]
   #キーワード検索
   get 'finder' => "finders#finder"
-
+  post 'finder' => "finders#finder"
 
   # get 'search', to: 'post_bungus#search'
 
