@@ -54,8 +54,13 @@ class PostBungusController < ApplicationController
   end
 
   def search
-    # @selection = params[:key]
-    # @post_bungus = PostBungu.sort(@selection)
+    @selection = params[:key]
+    if not @selection
+      @post_bungus = PostBungu.all
+    else
+      @post_bungus = PostBungu.sort(@selection)
+    end
+  # @post_bungus = PostBungu.sort(@selection)
   end
 
   private

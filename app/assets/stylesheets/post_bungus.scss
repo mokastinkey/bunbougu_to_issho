@@ -2,9 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post-bungu-container {
-  // padding-top: 7rem;
+  margin-top: 1.5rem;
 }
 
+// 項目
+
+.subject-box {
+  margin-bottom: 1.2rem;
+}
+
+.subject-name {
+  position: relative;
+  padding: 0.25em 1em;
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+  display: inline-block;
+  left: 2rem;
+}
+
+.subject-name:before, .subject-name:after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 4px;
+  height: -webkit-calc(100% + 14px);
+  height: calc(100% + 14px);
+  background-color: pink;
+}
+
+.subject-name:before {
+  left: 7px;
+}
+.subject-name:after {
+  right: 7px;
+}
+
+// 投稿内容
 .bungu {
   width: 85%;
   margin: 0 auto;
@@ -20,10 +53,50 @@
   width: 100%;
   }
 }
+.bungu-info {
+  padding: 0.7rem;
+  .post-detail {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
+.post-time, .post-name {
+  font-size: 0.7rem;
+}
+
+.bungu-detail {
+  margin: 0.5rem 0;
+}
+
+.bungu-name {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+// いいねのハート
 .fas.fa-heart, .far.fa-heart {
   color: red;
   font-size: 1.3rem;
+}
+
+.link-box {
+  text-align: center;
+}
+
+.post-link {
+  padding: 0.2em 0.5em;
+  margin: 2em 0;
+  color: #565656;
+  background: pink;
+  box-shadow: 0px 0px 0px 10px pink;
+  border: dashed 2px #fff;
+  border-radius: 8px;
+  display: inline-block;
+  // p {
+  //   margin: 0;
+  //   padding: 0;
+  // }
 }
 
 // ソート機能
@@ -37,7 +110,26 @@ select#key, #post_bungu_key {
   background-color: pink;
 }
 
+// キーワード検索
+#scope {
+  width: 30%;
+  background-color: lightblue;
+  border: none;
+}
+
+#word {
+  background-color: lightgray;
+  border: none;
+  height: 1.6rem;
+}
+
+.keyword-submit-btn {
+  border: none;
+  padding: 0.2rem;
+  background-color: lightblue;
+}
 // ジャンル機能
 .genre-table {
   display: none;
 }
+
