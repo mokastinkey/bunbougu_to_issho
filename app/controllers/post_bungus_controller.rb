@@ -11,7 +11,7 @@ class PostBungusController < ApplicationController
     end
     @genres = Genre.all
     # ランキング
-    @week_posts_rank = User.where(id: PostBungu.group(:user_id).where(created_at: Time.current.all_week).order('count(user_id) desc').limit(3).pluck(:user_id))
+    @week_like_ranks = PostBungu.find(Like.group(:post_bungu_id).where(created_at: Time.current.all_week).order('count(post_bungu_id) desc').limit(3).pluck(:post_bungu_id))
   end
 
   def new
