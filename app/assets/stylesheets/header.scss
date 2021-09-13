@@ -20,10 +20,12 @@
 .sub-head ul {
   display: flex;
   flex-wrap: wrap;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   li {
     width: 25%;
     text-align: center;
-    border: 1px solid pink;
+    // border: 1px solid pink;
     height: 60px;
     // display: flex;
     // justify-content: center;
