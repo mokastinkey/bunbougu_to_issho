@@ -84,4 +84,9 @@
     <%= f.submit "検索", class: "keyword-submit-btn" %>
   <% end %>
 
+  <% @week_posts_rank.each.with_index(1) do |user, i| %>
+    第<%= i %>位
+    <%= user.nickname %>
+    <p>投稿数<%= user.post_bungus.count %></p>
+　<% end %>
 </div>

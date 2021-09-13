@@ -10,6 +10,8 @@ class PostBungusController < ApplicationController
       @post_bungus = PostBungu.sort(@selection)
     end
     @genres = Genre.all
+    # ランキング
+    @week_posts_rank = User.where(id: PostBungu.group(:user_id).where(created_at: Time.current.all_week).order('count(user_id) desc').limit(3).pluck(:user_id))
   end
 
   def new
