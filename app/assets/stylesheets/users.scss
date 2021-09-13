@@ -59,6 +59,39 @@
   padding-left: 1.2rem;
 }
 
+.follow-btn {
+  border: 1px solid;
+  display: inline-block;
+  width: 10rem;
+  text-align: center;
+  margin-left: 8rem;
+}
+
+.intro-box {
+  margin: 2rem auto;
+  width: 90%;
+  position: relative;
+  padding: 0.5em 1em;
+  border: solid 3px green;
+  border-radius: 8px;
+  .self-intro {
+    position: absolute;
+    display: inline-block;
+    top: -13px;
+    /* left: 10px; */
+    padding: 0 9px;
+    line-height: 1;
+    font-size: 0.9rem;
+    background: #FFF;
+    color: green;
+    font-weight: bold;
+  }
+}
+
+.intro-box p {
+
+}
+
 .my-profile {
   // display: flex;
 }
