@@ -1,26 +1,46 @@
-<div class="my-profile">
-  <div class="profile-photo">
-    <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "20X20" %>
-    <h3><%= @user.nickname %></h3>
-  </div>
+<div class="profile-container">
 
-  <div class="profile-detail">
-    <div id='following-count_#{ @user.id }'>
-      <%= link_to "#{ @user.following.count }フォロー中", users_following_path(@user) %>
-    </div>
-    <div id='follower-count_#{ @user.id }'>
-      <%= link_to "#{ @user.follower.count }フォロワー", users_follower_path(@user) %>
+  <div class="my-profile">
+    <div class="profile-top">
+      <div class="profile-photo">
+        <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "20X20" %>
+      </div>
+      <div class="profile-content">
+
+        <p class="profile-nickname"><%= @user.nickname %></p>
+
+        <div class="follow-check">
+          <div id='following-count_#{ @user.id }'>
+            <p class="follow-mark">フォロー</p>
+            <div class="follow-number">
+              <%= link_to "#{ @user.following.count }", users_following_path(@user) %>
+            </div>
+          </div>
+            <div id='follower-count_#{ @user.id }'>
+              <p class="follow-mark no-margin">フォロワー</p>
+              <div class="follow-number">
+                <%= link_to "#{ @user.follower.count }", users_follower_path(@user) %>
+              </div>
+
+            </div>
+        </div>
+
+      </div>
     </div>
 
     <% if user_signed_in? && @user != current_user %>
-      <span id='follow-btn_#{ @user.id }'>
-        <%= render 'users/follow_btn', user: @user %>
-      </span>
+        <span id='follow-btn_#{ @user.id }'>
+          <%= render 'users/follow_btn', user: @user %>
+        </span>
     <% end %>
 
-    <p><%= @user.self_introduction %></p>
+
+
+      <p><%= @user.self_introduction %></p>
+
   </div>
-</div>
-<div class="profile-edit">
-  <%= link_to "プロフィール編集", edit_user_path(@user) %>
+  <div class="profile-edit">
+    <%= link_to "プロフィール編集", edit_user_path(@user) %>
+  </div>
+
 </div>
