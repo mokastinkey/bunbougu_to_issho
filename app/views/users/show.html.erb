@@ -6,9 +6,7 @@
         <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "20X20" %>
       </div>
       <div class="profile-content">
-
         <p class="profile-nickname"><%= @user.nickname %></p>
-
         <div class="follow-check">
           <div id='following-count_#{ @user.id }'>
             <p class="follow-mark">フォロー</p>
@@ -16,15 +14,13 @@
               <%= link_to "#{ @user.following.count }", users_following_path(@user) %>
             </div>
           </div>
-            <div id='follower-count_#{ @user.id }'>
-              <p class="follow-mark no-margin">フォロワー</p>
-              <div class="follow-number">
-                <%= link_to "#{ @user.follower.count }", users_follower_path(@user) %>
-              </div>
-
+          <div id='follower-count_#{ @user.id }'>
+            <p class="follow-mark no-margin">フォロワー</p>
+            <div class="follow-number">
+              <%= link_to "#{ @user.follower.count }", users_follower_path(@user) %>
             </div>
+          </div>
         </div>
-
       </div>
     </div>
 
@@ -33,17 +29,60 @@
           <%= render 'users/follow_btn', user: @user %>
         </span>
     <% end %>
+    <% if @user == current_user %>
+      <div class="profile-edit">
+        <%= link_to "プロフィール編集", edit_user_path(@user) %>
+      </div>
+    <% end %>
 
     <div class="intro-box">
       <span class="self-intro">自己紹介 / memo</span>
       <p><%= @user.self_introduction %></p>
     </div>
-
   </div>
-  <% if @user == current_user %>
-    <div class="profile-edit">
-      <%= link_to "プロフィール編集", edit_user_path(@user) %>
+
+  <div class="my-postbungu">
+
+    <% @post_bungus.each do |post_bungu| %>
+    <div class="bungu">
+      <div class="bungu-photo">
+      <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
+        <%= attachment_image_tag bungu_image, :image %>
+      <% end %>
+      </div>
+      <div class="bungu-info">
+        <div class="post-detail">
+          <p class="post-time"><i class="far fa-clock"></i> <%= post_bungu.created_at.to_s(:datetime_jp) %></p>
+          <p class="post-name"><%= link_to user_path(post_bungu.user_id) do %><i class="far fa-user"></i> <%= post_bungu.user.nickname %><% end %></p>
+        </div>
+        <div class="bungu-detail">
+          <%= link_to post_bungu_path(post_bungu) do %>
+            <p><%= post_bungu.catchphrase.truncate(25) %></p>
+            <p class="bungu-name">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
+          <% end %>
+        </div>
+
+        <div>
+          <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
+            <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
+                <p><%= post_bungu.likes.count %> Like !</i></p>
+            <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
+              <div id="btn_<%= post_bungu.id %>">
+                <% if current_user.liked_by?(post_bungu) %>
+                  <%= render 'likes/unlike_button', post_bungu: post_bungu %>
+                <% else %>
+                  <%= render 'likes/like_button', post_bungu: post_bungu %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
     </div>
   <% end %>
 
+
+
+  </div>
 </div>
