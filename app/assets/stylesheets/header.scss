@@ -4,9 +4,12 @@
   background-color: #fff;
   position: fixed;
   box-sizing: border-box;
+}
 
-  img {
-    height: 4rem;
+.logo img {
+  height: 4rem;
+  @media screen and (min-width: 768px) {
+  height: 6rem;
   }
 }
 
@@ -15,6 +18,9 @@
   justify-content: space-between;
   background-color: #fff;
   padding-left: 2rem;
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+  }
 }
 
 .sub-head ul {
@@ -22,6 +28,11 @@
   flex-wrap: wrap;
   border-top: 1px solid;
   border-bottom: 1px solid;
+  @media screen and (min-width: 768px) {
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 80%;
+  }
   li {
     width: 25%;
     text-align: center;
@@ -29,6 +40,9 @@
     height: 60px;
     // display: flex;
     // justify-content: center;
+    @media screen and (min-width: 768px) {
+      width: auto;
+    }
     a {
       font-size: 0.8rem;
     }

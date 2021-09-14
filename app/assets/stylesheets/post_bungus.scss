@@ -9,6 +9,10 @@
 
 .subject-box {
   margin-bottom: 1.2rem;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
 }
 
 .subject-name {
@@ -18,6 +22,10 @@
   border-bottom: solid 2px black;
   display: inline-block;
   left: 2rem;
+  @media screen and (min-width: 768px) {
+    font-size: 1.7rem;
+    left: 0rem;
+  }
 }
 
 .subject-name:before, .subject-name:after {
@@ -38,11 +46,26 @@
 }
 
 // 投稿内容
+
+.index-post-bungus {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 80rem;
+  }
+}
+
 .bungu {
   width: 85%;
   margin: 0 auto;
   margin-bottom: 2rem;
   box-shadow: 0 0 1.3rem rgba(0,0,0,0.1);
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    width: 33.333%;
+  }
 }
 
 .bungu-photo {
