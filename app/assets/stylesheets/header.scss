@@ -71,15 +71,15 @@
 
 .sp-nav {
   position: absolute;
-  top: 4rem;
+  // top: 4rem;
   left: 0;
   width: 70%;
   z-index: 1000;
   box-sizing: border-box;
   display: none;
   height: 100vh;
-  padding: 2rem;
-  background-color: peachpuff;
+  padding: 1.4rem;
+  background-color: orange;
 }
 
 .nav-inner {
@@ -99,15 +99,18 @@
   display: flex;
   flex-direction: column;
   // justify-content: center;
-  padding-top: 3rem;
-
+  // padding-top: 3rem;
+  overflow-y: scroll;
   li {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    text-align: left;
-
-    a {
-      font-size: 0.92rem;
-    }
+    padding-bottom: 1rem;
+  }
+  li:last-child {
+    padding-bottom: 130px;
   }
 }
+
+.list-head {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
