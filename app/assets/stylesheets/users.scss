@@ -133,17 +133,21 @@
   position: relative;
 }
 
-.admin-comment {
-  position: absolute;
-  top: 6rem;
-  left: 10rem;
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-}
+// .admin-comment {
+//   position: absolute;
+//   top: 6rem;
+//   left: 10rem;
+//   font-size: 1.2rem;
+//   text-align: center;
+//   font-weight: bold;
+// }
 
 .newpost {
-  padding-top: 13rem;
+  padding-top: 3rem;
   margin: 0 auto;
   width: 95%;
+}
+
+.newpost-form-box {
+  padding: 1rem 0;
 }
