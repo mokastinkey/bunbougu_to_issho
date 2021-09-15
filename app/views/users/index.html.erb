@@ -2,11 +2,13 @@
   <% @users.each do |user| %>
     <div class="user-item">
       <div class="user-profile_image">
-        <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "100X100" %>
+        <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "50X50" %>
       </div>
-      <p><%= link_to user_path(user) do %><%= user.nickname %><% end %></p>
-      <div><span>投稿数:</span><%= user.post_bungus.count %></div>
-      <%= user.self_introduction %>
+      <div class="user-index">
+        <p class="profile-nickname"><%= link_to user_path(user) do %><%= user.nickname %><% end %></p>
+        <div><span>投稿: </span><%= user.post_bungus.count %>つの文房具</div>
+        <%= user.self_introduction.truncate(40) %>
+      </div>
     </div>
   <% end %>
 </div>

@@ -4,21 +4,29 @@
 
 // indexページ
 .user-container {
-  display: flex;
+  // display: flex;
 }
 
 .user-item {
-  width: 50%;
+  width: 90%;
   margin-bottom: 2rem;
   margin: 0.5rem;
-  border: 0.1rem solid green;
+  border-bottom: 0.2rem dashed green;
+  display: flex;
+  padding: 0.3rem;
+  margin: 0.5rem auto;
 }
 
 .user-profile_image img {
-  max-width: 100%;
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
+  // max-width: 100%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  // object-fit: cover;
+}
+
+.user-index {
+  padding-left: 1rem;
 }
 
 // showページ
@@ -74,8 +82,6 @@
   text-align: center;
   margin-left: 8rem;
 }
-
-
 
 .intro-box {
   margin: 2rem auto;
