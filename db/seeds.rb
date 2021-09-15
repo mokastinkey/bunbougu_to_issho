@@ -12,14 +12,12 @@ User.create!(
       nickname: 'テスト1',
       email: 'test1@test.com',
       password: 'testtest',
-      profile_image: File.open("./app/assets/images/test.jpg"),
       self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
     },
     {
       nickname: 'テスト2',
       email: 'test2@test.com',
       password: 'testtest',
-      profile_image: File.open("./app/assets/images/test.jpg"),
       self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
     }
   ]
