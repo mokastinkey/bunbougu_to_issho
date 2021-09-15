@@ -1,33 +1,37 @@
-<p>文房具新規投稿画面</p>
-<%= form_with model:@post_bungu, local:true do |f| %>
-  <h4>文房具のキャッチフレーズ</h4>
-  <%= f.text_field :catchphrase, autofocus: true %>
-  <h4>画像</h4>
-  <%= f.attachment_field :bungu_images_images, multiple: true %>
-  <h4>商品名</h4>
-  <%= f.text_field :bungu_name %>
-  <h4>ジャンル</h4>
-  <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
-  <h4>使い心地や良い点など</h4>
-  <%= f.text_area :thought %>
-  <div id="rate-stars">
-    <h4>評価</h4>
-    <%= render 'post_bungus/star' %>
-  </div>
-  <h4>メーカー</h4>
-  <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
-    <div>
-      <label>
-        <%= f.radio_button :manufacturer, value %>
-        <%= manufacturer %>
-      </label>
-    </div>
-  <% end %>
-  <div class="other_manufacturer_text"><%= f.text_field :other_manufacturer %></div>
-  <h4>値段</h4>
-  <%= f.text_field :price %>
-  <h4>購入場所</h4>
-  <%= f.text_field :place %>
-  <%= f.submit '投稿する' %>
-<% end %>
+<div class="new-post-box">
+  <div class="post-bg">
 
+    <p>あなたの文房具、紹介してください</p>
+    <%= form_with model:@post_bungu, local:true do |f| %>
+      <h4>文房具のキャッチフレーズ</h4>
+      <%= f.text_field :catchphrase, autofocus: true %>
+      <h4>画像</h4>
+      <%= f.attachment_field :bungu_images_images, multiple: true %>
+      <h4>商品名</h4>
+      <%= f.text_field :bungu_name %>
+      <h4>ジャンル</h4>
+      <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
+      <h4>使い心地や良い点など</h4>
+      <%= f.text_area :thought %>
+      <div id="rate-stars">
+        <h4>評価</h4>
+        <%= render 'post_bungus/star' %>
+      </div>
+      <h4>メーカー</h4>
+      <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
+        <div>
+          <label>
+            <%= f.radio_button :manufacturer, value %>
+            <%= manufacturer %>
+          </label>
+        </div>
+      <% end %>
+      <div class="other_manufacturer_text"><%= f.text_field :other_manufacturer %></div>
+      <h4>値段</h4>
+      <%= f.text_field :price %>
+      <h4>購入場所</h4>
+      <%= f.text_field :place %>
+      <%= f.submit '投稿する' %>
+    <% end %>
+  </div>
+</div>
