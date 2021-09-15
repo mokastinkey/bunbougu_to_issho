@@ -5,6 +5,19 @@
   margin-top: 1.5rem;
 }
 
+.ranking-container {
+  @media screen and (min-width: 768px) {
+  }
+}
+
+.post-index-box {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-top: 1rem;
+  }
+}
+
+
 // 項目
 
 .subject-box {
@@ -35,7 +48,7 @@
   width: 4px;
   height: -webkit-calc(100% + 14px);
   height: calc(100% + 14px);
-  background-color: pink;
+  background-color: green;
 }
 
 .subject-name:before {
@@ -76,6 +89,7 @@
   width: 100%;
   }
 }
+
 .bungu-info {
   padding: 0.7rem;
   .post-detail {
@@ -165,3 +179,20 @@ select#key, #post_bungu_key {
   }
 }
 
+.rank-bungu {
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+.bungu-detail-rank  {
+  @media screen and (min-width: 768px) {
+    padding: 0.5rem 0;
+  }
+}
+
+.bungu-name-rank {
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
+}
