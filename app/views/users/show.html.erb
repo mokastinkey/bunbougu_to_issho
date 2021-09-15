@@ -40,15 +40,22 @@
       <p><%= @user.self_introduction %></p>
     </div>
   </div>
-
+  <% if @user == current_user %>
+    <%= link_to "お気に入り投稿", my_like_path(current_user) %>
+    <%= link_to "自分の投稿一覧", user_path(current_user) %>
+  <% end %>
   <div class="my-postbungu">
 
     <% @post_bungus.each do |post_bungu| %>
     <div class="bungu">
       <div class="bungu-photo">
-      <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-        <%= attachment_image_tag bungu_image, :image %>
-      <% end %>
+        <% if post_bungu.bungu_images.present? %>
+          <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
+            <%= attachment_image_tag bungu_image, :image %>
+          <% end %>
+        <% else %>
+          <%= image_tag 'test.jpg', size: '200x200' %>
+        <% end %>
       </div>
       <div class="bungu-info">
         <div class="post-detail">
