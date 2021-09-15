@@ -156,3 +156,12 @@ select#key, #post_bungu_key {
   display: none;
 }
 
+// ランキング
+.rank-number {
+  text-align: center;
+  p, i {
+    font-size: 1.6rem;
+    color: green;
+  }
+}
+
