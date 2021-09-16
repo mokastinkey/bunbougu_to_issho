@@ -7,33 +7,33 @@
     <div class="newpost">
       <%= form_with model:@post_bungu, local:true do |f| %>
         <div class="newpost-form-box">
-          <p>文房具のキャッチフレーズ</p>
+          <p class="newpost-heading">文房具のキャッチフレーズ</p>
           <%= f.text_area :catchphrase, autofocus: true, size: "40X40" %>
         </div>
         <div class="newpost-form-box">
-          <p>画像</p>
+          <p class="newpost-heading">画像</p>
           <%= f.attachment_field :bungu_images_images, multiple: true %>
         </div>
         <div class="newpost-form-box">
-          <p>商品名</p>
+          <p class="newpost-heading">商品名</p>
           <%= f.text_area :bungu_name, size: "40X40" %>
         </div>
         <div class="newpost-form-box">
-          <p>ジャンル</p>
+          <p class="newpost-heading">ジャンル</p>
           <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
         </div>
         <div class="newpost-form-box">
-          <p>使い心地や良い点など</p>
+          <p class="newpost-heading">使い心地や良い点など</p>
           <%= f.text_area :thought,  size: "40X100" %>
         </div>
         <div class="newpost-form-box">
           <div id="rate-stars">
-            <p>評価</p>
+            <p class="newpost-heading">評価</p>
             <%= render 'post_bungus/star' %>
           </div>
         </div>
         <div class="newpost-form-box">
-          <p>メーカー</p>
+          <p class="newpost-heading">メーカー</p>
           <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
             <div>
               <label>
@@ -45,11 +45,11 @@
           <div class="other_manufacturer_text"><%= f.text_field :other_manufacturer, size: 40 %></div>
         </div>
         <div class="newpost-form-box">
-          <p>値段</p>
+          <p class="newpost-heading">値段</p>
           <%= f.text_field :price %> 円
         </div>
         <div class="newpost-form-box">
-          <p>購入場所</p>
+          <p class="newpost-heading">購入場所</p>
           <%= f.text_area :place, size: "40X40" %>
         </div>
 
