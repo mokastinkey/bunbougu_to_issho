@@ -213,3 +213,37 @@ select#key, #post_bungu_key {
     text-align: center;
   }
 }
+
+// new.html
+
+.new-post-box {
+  background-image: url('bungu.jpg');
+  background-size:  cover;
+}
+
+.post-bg {
+  background-color: rgba(255, 250, 205, 0.9);
+}
+
+.newpost-index {
+  position: relative;
+}
+
+// .admin-comment {
+//   position: absolute;
+//   top: 6rem;
+//   left: 10rem;
+//   font-size: 1.2rem;
+//   text-align: center;
+//   font-weight: bold;
+// }
+
+.newpost {
+  padding-top: 3rem;
+  margin: 0 auto;
+  width: 95%;
+}
+
+.newpost-form-box {
+  padding: 1rem 0;
+}
