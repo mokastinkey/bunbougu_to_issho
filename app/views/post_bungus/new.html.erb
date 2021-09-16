@@ -8,10 +8,12 @@
       <%= form_with model:@post_bungu, local:true do |f| %>
         <div class="newpost-form-box">
           <p class="newpost-heading">文房具のキャッチフレーズ</p>
+          <p>例えば... 文房具点で一目惚れした手帳</p>
           <%= f.text_area :catchphrase, autofocus: true, size: "40X40" %>
         </div>
         <div class="newpost-form-box">
           <p class="newpost-heading">画像</p>
+          <p>複数枚OK</p>
           <%= f.attachment_field :bungu_images_images, multiple: true %>
         </div>
         <div class="newpost-form-box">
@@ -24,6 +26,7 @@
         </div>
         <div class="newpost-form-box">
           <p class="newpost-heading">使い心地や良い点など</p>
+          <p>自由にお書きください !</p>
           <%= f.text_area :thought,  size: "40X100" %>
         </div>
         <div class="newpost-form-box">
