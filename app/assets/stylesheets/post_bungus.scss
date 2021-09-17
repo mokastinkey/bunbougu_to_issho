@@ -12,10 +12,15 @@
 }
 
 .post-index-box {
+  margin-bottom: 3rem;
   @media screen and (min-width: 768px) {
     display: flex;
     margin-top: 1rem;
   }
+}
+
+.postnew-box {
+  margin-top: 5rem;
 }
 
 
@@ -35,7 +40,7 @@
   border-top: solid 2px black;
   border-bottom: solid 2px black;
   display: inline-block;
-  left: 2rem;
+  left: 1rem;
   @media screen and (min-width: 768px) {
     font-size: 1.7rem;
     left: 0rem;
@@ -62,6 +67,10 @@
 // 投稿内容
 
 .index-post-bungus {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-evenly;
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -72,8 +81,7 @@
 }
 
 .bungu {
-  width: 85%;
-  margin: 0 auto;
+  width: 47%;
   margin-bottom: 2rem;
   box-shadow: 0 0 1.3rem rgba(0,0,0,0.1);
   @media screen and (min-width: 768px) {
@@ -83,7 +91,7 @@
 }
 
 .bungu-photo {
-  height: 300px;
+  height: 150px;
   img {
   height: 100%;
   object-fit: cover;
@@ -108,15 +116,23 @@
   margin: 0.5rem 0;
 }
 
+.catch {
+  font-size: 0.9rem;
+}
+
 .bungu-name {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 // いいねのハート
 .fas.fa-heart, .far.fa-heart {
   color: red;
   font-size: 1.3rem;
+}
+
+.like-count {
+  margin: 0;
 }
 
 .link-box {
@@ -141,6 +157,7 @@
 // 投稿をもっと見るリンク
 .post-link p {
   color: white;
+  margin-bottom: 0;
 }
 
 // ソート機能
@@ -190,21 +207,30 @@ select#key, #post_bungu_key {
 }
 
 // ランキング
+.ranking-container {
+  margin-top: 1rem;
+}
+
 .rank-number {
   text-align: center;
   p, i {
     font-size: 1.6rem;
     color: green;
+    margin-bottom: 0.2rem;
   }
 }
 
 .rank-bungu {
+  width: 90%;
+  margin: 0 auto;
   @media screen and (min-width: 768px) {
     width: 100%;
   }
 }
 
 .bungu-detail-rank  {
+  display: flex;
+  justify-content: space-between;
   @media screen and (min-width: 768px) {
     padding: 0.5rem 0;
   }
@@ -215,6 +241,12 @@ select#key, #post_bungu_key {
     text-align: center;
   }
 }
+
+.rank-border {
+  padding: 0.6rem;
+  border: 1px solid;
+}
+
 
 // new.html
 

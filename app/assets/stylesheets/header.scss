@@ -64,7 +64,9 @@
   font-size: 3rem;
   cursor: pointer;
   background-color: #fff;
-
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
   .fas {
     font-size: 1.6rem;
   }
