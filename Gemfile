@@ -82,3 +82,6 @@ gem 'font-awesome-sass', '~> 5.13'
 
 #pry-byebugインストール
 gem 'pry-byebug'
+
+#bootstrap導入
+gem 'bootstrap', '~> 4.5'
