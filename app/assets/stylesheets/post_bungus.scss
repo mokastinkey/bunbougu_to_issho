@@ -83,7 +83,7 @@
 }
 
 .bungu-photo {
-  height: 150px;
+  height: 300px;
   img {
   height: 100%;
   object-fit: cover;
@@ -184,7 +184,9 @@ select#key, #post_bungu_key {
 }
 // ジャンル機能
 .genre-table {
-  display: none;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 // ランキング
@@ -222,7 +224,7 @@ select#key, #post_bungu_key {
 }
 
 .post-bg {
-  background-color: rgba(255, 250, 205, 0.9);
+  background-color: rgba(255, 255, 255, 0.94);
 }
 
 .newpost-index {
@@ -276,25 +278,35 @@ select#key, #post_bungu_key {
 
 .show-post-box {
   padding-top: 2.5rem;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .show-bungu-heading {
   margin-bottom: 0.8rem;
 }
 
+.post-day {
+  text-align: right;
+  margin-bottom: 3rem;
+}
+
 .catchphrase-heading {
   text-align: center;
 }
 
-.display {
-  margin: 0 auto;
-  width: 90%;
-}
+// .display {
+//   margin: 0 auto;
+//   width: 90%;
+// }
 
-.show-image img {
+.show-image {
+  margin-bottom: 2rem;
+  img {
   width: 100%;
   height: 20rem;
   object-fit: cover;
+  }
 }
 
 .bungu-rate {
@@ -305,4 +317,27 @@ select#key, #post_bungu_key {
   background-color: #f7f6f5;
   width: 90%;
   margin: 2rem auto;
+}
+
+#bungu-table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.editdestroy-btn-box {
+  margin: 0 auto;
+  display: flex;
+  margin-top: 3rem;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.edit-btn {
+  padding: 0.7rem;
+  // background-color: ;
+}
+
+.edit-btn {
+  padding: 0.7rem;
+  // background-color: ;
 }
