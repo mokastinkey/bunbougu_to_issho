@@ -241,7 +241,7 @@ select#key, #post_bungu_key {
 .newpost {
   padding-top: 3rem;
   margin: 0 auto;
-  width: 95%;
+  width: 90%;
 }
 
 .newpost-form-box {
@@ -250,4 +250,24 @@ select#key, #post_bungu_key {
 
 .newpost-heading {
   font-size: 1.2rem;
+}
+
+.thought-area {
+  height: 350px;
+}
+
+.submit-box {
+  text-align: center;
+}
+
+.newpost-submit-btn {
+  border: none;
+  padding: 0.2rem;
+  background-color: orange;
+  width: 30%;
+  height: 3rem;
+}
+
+.manufacturer-radiobtn {
+  
 }
