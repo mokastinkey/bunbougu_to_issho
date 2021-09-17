@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post-bungu-container {
-  margin-top: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 .ranking-container {
@@ -93,7 +93,7 @@
 
 .bungu-info {
   padding: 0.7rem;
-  background-color: #fffff8;
+  background-color: #fff;
   .post-detail {
     display: flex;
     justify-content: space-between;
