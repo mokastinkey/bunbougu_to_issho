@@ -1,3 +1,69 @@
+//新規登録
+
+.field {
+  margin: 1rem 0;
+}
 .field input {
  width: 100%;
+}
+
+.new-devise {
+  padding: 2rem;
+  width: 80%;
+  margin: 0 auto;
+  background-color: lightgray;
+  border-radius: 10%;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+    margin-top: 2rem;
+  }
+}
+
+.action {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.action-signup {
+  padding: 0.9rem;
+  background-color: #b1533c;
+  color: #fff;
+  border: none;
+}
+
+.devise-jump {
+  text-align: center;
+}
+
+.login-explanation {
+  color: green;
+}
+
+.jump-login {
+  color: green;
+  border-bottom: 3px solid green;
+  padding-bottom: 2px;
+}
+
+//ログイン
+
+.action-login {
+  padding: 0.9rem;
+  background-color: green;
+  color: #fff;
+  border: none;
+}
+
+.jump-signup {
+  color: #b1533c;
+  border-bottom: 3px solid #b1533c;
+  padding-bottom: 2px;
+}
+
+.sign-explanation {
+  color: #b1533c;
+}
+
+.forgot-confirmation {
+  margin-top: 2rem;
 }
