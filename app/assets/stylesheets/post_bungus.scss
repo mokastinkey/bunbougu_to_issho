@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post-bungu-container {
   padding-top: 1.5rem;
+  @media screen and (min-width: 768px) {
+    width: 80%;
+  }
 }
 
 .ranking-container {

@@ -29,11 +29,20 @@
           <%= render 'users/follow_btn', user: @user %>
         </span>
     <% end %>
-    <% if @user == current_user %>
-      <div class="profile-edit">
-        <%= link_to "プロフィール編集", edit_user_path(@user) %>
+    <div class="profile-btn">
+      <% if @user == current_user %>
+        <div class="profile-edit">
+          <%= link_to "プロフィール編集", edit_user_path(@user) %>
+        </div>
+      <% end %>
+      <div class="switch-btn">
+        <% if @user == current_user %>
+          <%= link_to my_like_path(current_user) do %>
+            <p class="switch-color">お気に入り投稿へ →</p>
+          <% end %>
+        <% end %>
       </div>
-    <% end %>
+    </div>
 
     <div class="intro-box">
       <span class="self-intro">自己紹介 / memo</span>
@@ -42,13 +51,6 @@
   </div>
 
   <div class="my-post-all">
-    <div class="switch-btn">
-      <% if @user == current_user %>
-        <%= link_to my_like_path(current_user) do %>
-          <p class="switch-color">お気に入り投稿へ →</p>
-        <% end %>
-      <% end %>
-    </div>
 
     <div class="index-post-bungus">
 
