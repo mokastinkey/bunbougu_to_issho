@@ -1,15 +1,15 @@
 <div class="post-index-box">
   <div class="post-bungu-container">
 
-    <% if @selection == 'new' %>
-      <p>投稿が新しい文房具順</p>
-    <% elsif @selection == 'old' %>
-      <p>投稿が古い文房具順</p>
-    <% elsif @selection == 'manylikes' %>
-      <p>いいねが多めな文房具順</p>
-    <% elsif @selection == 'littlelikes' %>
-      <p>いいねが少なめな文房具順</p>
-    <% end %>
+    <!--<% if @selection == 'new' %>-->
+    <!--  <p>投稿が新しい文房具順</p>-->
+    <!--<% elsif @selection == 'old' %>-->
+    <!--  <p>投稿が古い文房具順</p>-->
+    <!--<% elsif @selection == 'manylikes' %>-->
+    <!--  <p>いいねが多めな文房具順</p>-->
+    <!--<% elsif @selection == 'littlelikes' %>-->
+    <!--  <p>いいねが少なめな文房具順</p>-->
+    <!--<% end %>-->
 
     <!-- ランキング -->
     <div class="ranking-container">
@@ -50,21 +50,7 @@
                     <% end %>
                   </div>
 
-                  <div>
-                    <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
-                      <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
-                          <p><%= post_bungu.likes.count %> Like !</i></p>
-                      <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
-                        <div id="btn_<%= post_bungu.id %>">
-                          <% if current_user.liked_by?(post_bungu) %>
-                            <%= render 'likes/unlike_button', post_bungu: post_bungu %>
-                          <% else %>
-                            <%= render 'likes/like_button', post_bungu: post_bungu %>
-                          <% end %>
-                        </div>
-                      <% end %>
-                    <% end %>
-                  </div>
+
                 </div>
               </div>
             </div>
