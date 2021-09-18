@@ -2,6 +2,7 @@ class LikesController < ApplicationController
 
   def index
     @post_bungus = current_user.like_post_bungus
+    @user = current_user
     # likes = Like.where(user_id: current_user)
     # @post_bungus = likes.post_bungus
     # # likes = current_user.likes

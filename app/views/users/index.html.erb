@@ -6,8 +6,8 @@
       </div>
       <div class="user-index">
         <p class="profile-nickname"><%= link_to user_path(user) do %><%= user.nickname %><% end %></p>
-        <div><span>投稿: </span><%= user.post_bungus.count %>つの文房具</div>
-        <%= user.self_introduction.truncate(40) %>
+        <div><span>投稿: </span><%= user.post_bungus.count %></div>
+        <p class="user-intro"><%= user.self_introduction.truncate(50) %></p>
       </div>
     </div>
   <% end %>

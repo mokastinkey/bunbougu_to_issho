@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// indexページ
+// indexページ ////////////////////////////
 .user-container {
   // display: flex;
 }
@@ -10,26 +10,33 @@
 .user-item {
   width: 90%;
   margin-bottom: 2rem;
-  margin: 0.5rem;
   border-bottom: 0.2rem dashed green;
   display: flex;
-  padding: 0.3rem;
-  margin: 0.5rem auto;
+  margin: 0.1rem auto;
 }
 
-.user-profile_image img {
+.user-profile_image  {
+  align-items: center;
+  display: flex;
+  img {
   // max-width: 100%;
   width: 70px;
   height: 70px;
   border-radius: 50%;
   // object-fit: cover;
+  }
 }
 
 .user-index {
   padding-left: 1rem;
 }
 
-// showページ
+.user-intro {
+  margin-bottom: 0.1rem;
+  font-size: 0.7rem;
+}
+
+// showページ ////////////////////////////
 .profile-container {
   margin-top: 2rem;
 }
@@ -43,20 +50,23 @@
 
 .profile-content {
   padding-top: 0.5rem;
+  width: 33%;
 }
 
 .profile-nickname {
-  padding-bottom: 0.4rem;
+  // padding-bottom: 0.4rem;
   text-align: center;
+  margin: 0;
+  margin-bottom: 0.4rem;
 }
 
 .follow-check {
   display: flex;
+  justify-content: space-between;
 }
 
 .follow-mark {
   font-size: 0.7rem;
-  margin-right: 1rem;
 }
 
 // .no-margin {
@@ -73,6 +83,7 @@
   width: 10rem;
   text-align: center;
   margin-left: 8rem;
+  margin-top: 1rem;
 }
 
 .profile-edit {
@@ -81,6 +92,7 @@
   width: 10rem;
   text-align: center;
   margin-left: 8rem;
+  margin-top: 1rem;
 }
 
 .intro-box {
@@ -118,3 +130,11 @@
     border-radius: 40%;
 }
 
+.switch-btn {
+  display: flex;
+  justify-content: space-evenly;
+  p {
+    padding: 0.8rem;
+    background-color: orange;
+  }
+}
