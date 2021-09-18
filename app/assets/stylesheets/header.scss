@@ -112,6 +112,40 @@
   }
 }
 
+.genre-box {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.list-head {
+  background-color: lightgray;
+}
+
+.rank-flex-box {
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
+
+// pcジャンル検索
+
+.list-head {
+  @media screen and (min-width: 768px) {
+    margin: 1rem 0;
+  }
+}
+
+.pc-genre {
+  @media screen and (min-width: 768px) {
+    border: 1px solid;
+    padding: 2rem;
+    li {
+      line-height: 2rem;
+    }
+  }
+}
+
 // ハンバーガーメニュー背景色(jquery)
 .active {
   width: 100%;

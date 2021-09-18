@@ -75,7 +75,6 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    width: 90%;
     max-width: 80rem;
   }
 }
@@ -123,6 +122,9 @@
 .bungu-name {
   text-align: center;
   font-size: 1.1rem;
+  @media screen and (min-width: 768px) {
+    font-size: 1.4rem;
+  }
 }
 
 // いいねのハート

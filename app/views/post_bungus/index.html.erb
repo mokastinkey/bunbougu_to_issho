@@ -1,22 +1,5 @@
 <div class="post-index-box">
   <div class="post-bungu-container">
-    <!-- ジャンル検索-->
-    <table class="table table-bordered genre-table">
-      <thead>
-        <tr>
-          <th>ジャンル検索</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @genres.each do |genre| %>
-          <tr>
-            <td>
-              <%= link_to genre.name, genre_path(genre.id)%>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
 
     <% if @selection == 'new' %>
       <p>投稿が新しい文房具順</p>
@@ -33,59 +16,63 @@
       <div class="subject-box">
         <p class="subject-name">注目の文房具</p>
       </div>
-      <% @week_like_ranks.each.with_index(1) do |post_bungu, i| %>
-        <div class="rank-number">
-          <p><i class="fas fa-medal"></i> No.<%= i %></p>
-        </div>
-        <div class="rank-bungu">
-          <!--<div class="bungu-photo">-->
-          <!--<% post_bungu.bungu_images.first(1).each do |bungu_image| %>-->
-          <!--  <%= attachment_image_tag bungu_image, :image %>-->
-          <!--<% end %>-->
-          <!--</div>-->
-          <div class="bungu-info">
-            <div class="rank-border">
-              <div class="post-detail">
-                <p class="post-time"><i class="far fa-clock"></i> <%= post_bungu.created_at.to_s(:datetime_jp) %></p>
-                <%= link_to user_path(post_bungu.user_id) do %><p class="post-name"><i class="far fa-user"></i> <%= post_bungu.user.nickname %></p><% end %>
-              </div>
-              <div class="bungu-detail-rank">
-                <div class="rank-bungu-index">
-                  <%= link_to post_bungu_path(post_bungu) do %>
-                    <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
-                    <p class="bungu-name-rank">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
-                  <% end %>
-                </div>
-                <% if post_bungu.bungu_images.present? %>
-                  <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-                    <%= attachment_image_tag bungu_image, :image %>
-                  <% end %>
-                <%else %>
-                  <%= image_tag 'test.jpg', size: '80x80' %>
-                <% end %>
-              </div>
-
-              <div>
-                <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
-                  <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
-                      <p><%= post_bungu.likes.count %> Like !</i></p>
-                  <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
-                    <div id="btn_<%= post_bungu.id %>">
-                      <% if current_user.liked_by?(post_bungu) %>
-                        <%= render 'likes/unlike_button', post_bungu: post_bungu %>
-                      <% else %>
-                        <%= render 'likes/like_button', post_bungu: post_bungu %>
+      <div class="rank-flex-box">
+        <% @week_like_ranks.each.with_index(1) do |post_bungu, i| %>
+          <div class="rank-flex">
+            <div class="rank-number">
+              <p><i class="fas fa-medal"></i> No.<%= i %></p>
+            </div>
+            <div class="rank-bungu">
+              <!--<div class="bungu-photo">-->
+              <!--<% post_bungu.bungu_images.first(1).each do |bungu_image| %>-->
+              <!--  <%= attachment_image_tag bungu_image, :image %>-->
+              <!--<% end %>-->
+              <!--</div>-->
+              <div class="bungu-info">
+                <div class="rank-border">
+                  <div class="post-detail">
+                    <p class="post-time"><i class="far fa-clock"></i> <%= post_bungu.created_at.to_s(:datetime_jp) %></p>
+                    <%= link_to user_path(post_bungu.user_id) do %><p class="post-name"><i class="far fa-user"></i> <%= post_bungu.user.nickname %></p><% end %>
+                  </div>
+                  <div class="bungu-detail-rank">
+                    <div class="rank-bungu-index">
+                      <%= link_to post_bungu_path(post_bungu) do %>
+                        <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
+                        <p class="bungu-name-rank">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
                       <% end %>
                     </div>
-                  <% end %>
-                <% end %>
+                    <% if post_bungu.bungu_images.present? %>
+                      <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
+                        <%= attachment_image_tag bungu_image, :image %>
+                      <% end %>
+                    <%else %>
+                      <%= image_tag 'test.jpg', size: '80x80' %>
+                    <% end %>
+                  </div>
+
+                  <div>
+                    <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
+                      <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
+                          <p><%= post_bungu.likes.count %> Like !</i></p>
+                      <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
+                        <div id="btn_<%= post_bungu.id %>">
+                          <% if current_user.liked_by?(post_bungu) %>
+                            <%= render 'likes/unlike_button', post_bungu: post_bungu %>
+                          <% else %>
+                            <%= render 'likes/like_button', post_bungu: post_bungu %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
 
           </div>
-        </div>
 
-      <% end %>
+        <% end %>
+      </div>
     </div>
 
     <div class="postnew-box">
@@ -154,7 +141,37 @@
         <%= f.submit "検索", class: "keyword-submit-btn" %>
       <% end %>
     </div>
+
+
   </div>
+
+  <div class="genre-box">
+  <!-- ジャンル検索-->
+    <ul class="pc-genre">
+      <li class="list-head"> 書くもの </li>
+      <li><%= link_to "ボールペン", genre_path(1) %></li>
+      <li><%= link_to "シャープペンシル系", genre_path(2) %></li>
+      <li><%= link_to "色付きペン", genre_path(3) %></li>
+      <li><%= link_to "その他「書くもの」", genre_path(4) %></li>
+      <li class="list-head"> 書かれるもの </li>
+      <li><%= link_to "ノート/ルーズリーフ/メモ", genre_path(5) %></li>
+      <li><%= link_to "手帳", genre_path(6) %></li>
+      <li><%= link_to "付箋", genre_path(7) %></li>
+      <li><%= link_to "その他「書かれるもの」", genre_path(8) %></li>
+      <li class="list-head"> 貼るもの </li>
+      <li><%= link_to "のり/テープのり", genre_path(9) %></li>
+      <li><%= link_to "テーブ/マスキングテーブ", genre_path(10) %></li>
+      <li><%= link_to "シール/スタンプ", genre_path(11) %></li>
+      <li class="list-head"> はかるもの </li>
+      <li><%= link_to "定規/メジャー/ストップウォッチ", genre_path(12) %></li>
+      <li class="list-head"> 入れもの </li>
+      <li><%= link_to "ペンケース/ファイル", genre_path(13) %></li>
+      <li class="list-head"> その他 </li>
+      <li class="list-bottom-padding"><%= link_to "その他文房具", genre_path(14) %></li>
+    </ul>
+  </div>
+
+
 
 
 
