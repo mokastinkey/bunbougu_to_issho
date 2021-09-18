@@ -1,10 +1,14 @@
 <div class="profile-container">
 
-  <p>お気に入り投稿</p>
+  <div class="subject-box">
+    <p class="subject-name">お気に入り</p>
+  </div>
   <div class="my-post-all">
     <div class="switch-btn">
       <% if @user == current_user %>
-        <p><%= link_to "自分の投稿一覧へGO", user_path(current_user) %></p>
+        <%= link_to user_path(current_user) do %>
+          <p class="switch-color">自分の投稿一覧へ →</p>
+        <% end %>
       <% end %>
     </div>
 

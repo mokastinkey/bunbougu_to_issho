@@ -44,7 +44,9 @@
   <div class="my-post-all">
     <div class="switch-btn">
       <% if @user == current_user %>
-          <p><%= link_to "お気に入り投稿へGO", my_like_path(current_user) %></p>
+        <%= link_to my_like_path(current_user) do %>
+          <p class="switch-color">お気に入り投稿へ →</p>
+        <% end %>
       <% end %>
     </div>
 
