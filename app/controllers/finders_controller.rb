@@ -1,12 +1,12 @@
 class FindersController < ApplicationController
   def finder
     @scope = params[:scope]
-    word = params[:word]
+    @word = params[:word]
 
     if @scope == 'User'
-      @users = User.looks(word)
+      @users = User.looks(@word)
     else
-      @post_bungus = PostBungu.looks(word)
+      @post_bungus = PostBungu.looks(@word)
     end
   end
 end

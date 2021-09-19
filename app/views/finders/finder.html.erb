@@ -1,7 +1,17 @@
 <% if @scope == "User" %>
-  <%= render 'users/userlist', users: @users %>
+　<p>ユーザー名「 <%= @word %> 」の検索結果</p>
+  <% if @users.present? %>
+    <%= render 'users/userlist', users: @users %>
+  <% else %>
+    <p>該当するユーザが見つかりませんでした</p>
+  <% end %>
 <% else %>
+  <p>商品名「 <%= @word %> 」の検索結果</p>
   <div class="index-post-bungus">
-    <%= render 'post_bungus/content', post_bungus: @post_bungus %>
+    <% if @post_bungus.present? %>
+      <%= render 'post_bungus/content', post_bungus: @post_bungus %>
+    <% else %>
+      <p>該当する商品が見つかりませんでした</p>
+    <% end %>
   </div>
 <% end %>
