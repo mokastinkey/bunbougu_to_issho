@@ -1,6 +1,6 @@
 <%= form_with(model: [post_bungu, post_comment] ) do |f| %>
   <div>
-    <%= f.text_area :content, size: "40X40", placeholder: "コメントはこちら !" %>
+    <%= f.text_area :content, size: "40X40", placeholder: "コメントはこちら !", class: "comment-text-area" %>
   </div>
   <div class="comment-action">
     <%= f.submit "送信" %>

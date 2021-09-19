@@ -259,7 +259,7 @@ select#key, #post_bungu_key {
 }
 
 
-// new.html
+// new.html ///////////////////////////////
 
 .new-post-box {
   background-image: url('bungu.jpg');
@@ -299,6 +299,7 @@ select#key, #post_bungu_key {
 
 .thought-area {
   height: 350px;
+  padding: 0.4rem;
 }
 
 .submit-box {
@@ -317,7 +318,7 @@ select#key, #post_bungu_key {
 
 // }
 
-// show.html
+// show.html ///////////////////////////////
 
 .show-post-box {
   padding-top: 2.5rem;
@@ -360,6 +361,9 @@ select#key, #post_bungu_key {
   background-color: #f7f6f5;
   width: 90%;
   margin: 2rem auto;
+  p {
+     white-space: pre-wrap;
+  }
 }
 
 #bungu-table {
