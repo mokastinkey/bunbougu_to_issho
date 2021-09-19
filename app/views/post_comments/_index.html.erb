@@ -1,9 +1,20 @@
 <% post_comments.each do |post_comment| %>
   <% unless post_comment.id.nil? %>
-    <p><%= link_to "#{post_comment.user.nickname}さん", user_path(post_comment.user.id) %></p>
-    <p>コメント：<%= post_comment.content %></p>
-    <% if post_comment.user == current_user %>
-      <p><%= link_to 'コメントを削除する', post_bungu_post_comment_path(post_comment.post_bungu_id, post_comment.id), method: :delete, remote: true %></p>
-    <% end %>
+    <div class="comment-content">
+      <div class="comment-image">
+        <p><%= attachment_image_tag post_comment.user, :profile_image, :fill, 80, 80, format: 'jpeg', fallback: "test.jpg", size:'50x50', class: "user-image-shape" %></p>
+      </div>
+      <div class="comment-show">
+        <%= link_to user_path(post_comment.user.id) do %>
+          <p class="comment-nickname"><%= post_comment.user.nickname %></p>
+        <% end %>
+        <p class="post-comment"><%= post_comment.content %></p>
+        <% if post_comment.user == current_user %>
+          <%= link_to post_bungu_post_comment_path(post_comment.post_bungu_id, post_comment.id), method: :delete, remote: true do %>
+            <i class="far fa-trash-alt"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 <% end %>

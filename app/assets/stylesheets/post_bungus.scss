@@ -362,19 +362,23 @@ select#key, #post_bungu_key {
 }
 
 .editdestroy-btn-box {
-  margin: 0 auto;
+  margin-left: auto;
   display: flex;
   margin-top: 3rem;
   justify-content: space-between;
-  width: 60%;
+  width: 30%;
+  padding-right: 1rem;
 }
 
 .edit-btn {
-  padding: 0.7rem;
-  // background-color: ;
+  padding: 0.4rem;
+  background-color: green;
+  color: #fff;
 }
 
-.edit-btn {
-  padding: 0.7rem;
-  // background-color: ;
+.destroy-btn {
+  padding: 0.4rem;
+  background-color: orangered;
+  color: #fff;
 }
+

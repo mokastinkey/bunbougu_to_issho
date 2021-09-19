@@ -1,0 +1,72 @@
+.comment-box {
+  padding-top: 1rem;
+  border-top: 3px solid lightgray;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.comment-create {
+  position: relative;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #eedcb3;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.comment-create:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #eedcb3; //ベージュ
+}
+
+.comment-top {
+  text-align: center;
+}
+
+#comments_area {
+  // display: flex;
+}
+
+.comment-show {
+  width: 100%;
+  margin-left: 0.5rem;
+}
+
+.user-image-shape {
+  border-radius: 50%;
+}
+
+.comment-nickname {
+  margin-bottom: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.post-comment {
+  font-size: 0.9rem;
+}
+
+.comment-content {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.comment-action input {
+  padding: 0.1rem 1rem;
+  background-color: #eedcb3; //ベージュ
+  border: none;
+}
