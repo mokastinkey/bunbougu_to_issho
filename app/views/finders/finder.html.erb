@@ -1,9 +1,7 @@
 <% if @scope == "User" %>
-    <% @users.each do |user| %>
-        <%= user.nickname %>
-    <% end %>
+  <%= render 'users/userlist', users: @users %>
 <% else %>
-    <% @post_bungus.each do |post_bungu| %>
-        <%= post_bungu.bungu_name %>
-    <% end %>
+  <div class="index-post-bungus">
+    <%= render 'post_bungus/content', post_bungus: @post_bungus %>
+  </div>
 <% end %>

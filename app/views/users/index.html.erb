@@ -1,14 +1,1 @@
-<div class="user-container">
-  <% @users.each do |user| %>
-    <div class="user-item">
-      <div class="user-profile_image">
-        <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "50X50" %>
-      </div>
-      <div class="user-index">
-        <p class="profile-nickname"><%= link_to user_path(user) do %><%= user.nickname %><% end %></p>
-        <div><span>投稿: </span><%= user.post_bungus.count %></div>
-        <p class="user-intro"><%= user.self_introduction.truncate(50) %></p>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'userlist', users: @users %>
