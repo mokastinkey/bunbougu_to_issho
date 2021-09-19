@@ -1,31 +1,71 @@
-<p>文房具投稿編集画面</p>
-<%= form_with model:@post_bungu, local:true do |f| %>
-  <h4>文房具のキャッチフレーズ</h4>
-  <%= f.text_field :catchphrase, autofocus: true %>
-  <h4>画像</h4>
-  <%= f.attachment_field :bungu_images_images, multiple: true %>
-  <h4>商品名</h4>
-  <%= f.text_field :bungu_name %>
-  <h4>ジャンル</h4>
-  <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
-  <h4>使い心地や良い点など</h4>
-  <%= f.text_area :thought %>
-  <h4>評価</h4>
-  <div id="rate-stars" data-score="<%= @post_bungu.rate %>"></div>
-  <%= render 'post_bungus/star' %>
-  <h4>メーカー</h4>
-  <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
-    <div>
-      <label>
-        <%= f.radio_button :manufacturer, value %>
-        <%= manufacturer %>
-      </label>
+<div class="new-post-box">
+  <div class="post-bg">
+    <div class="newpost-index">
+
+    <!--<p class="admin-comment">あなたの文房具を<br>紹介してください!</p>-->
+
+    <div class="newpost">
+      <%= form_with model:@post_bungu, local:true do |f| %>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 文房具のキャッチフレーズ</p>
+          <p>例) 文房具点で一目惚したが素敵な手帳！ など</p>
+          <%= f.text_area :catchphrase, autofocus: true, size: "40X40" %>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 画像</p>
+          <p>複数枚選択可能です</p>
+          <%= f.attachment_field :bungu_images_images, multiple: true %>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 商品名</p>
+          <%= f.text_area :bungu_name, size: "40X40" %>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> ジャンル</p>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 使い心地や良い点など</p>
+          <p>自由にお書きください !</p>
+          <%= f.text_area :thought,  size: "40X100", class: "thought-area" %>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 評価</p>
+          <div id="rate-stars" data-score="<%= @post_bungu.rate %>"></div>
+          <%= render 'post_bungus/star' %>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> メーカー</p>
+          <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
+            <div>
+              <label>
+                <%= f.radio_button :manufacturer, value, class: "manufacturer-radiobtn" %>
+                <%= manufacturer %>
+              </label>
+            </div>
+          <% end %>
+          <div class="other_manufacturer_text"><%= f.text_field :other_manufacturer, size: 40 %></div>
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 値段</p>
+          <%= f.text_field :price %> 円
+        </div>
+        <div class="newpost-form-box">
+          <p class="newpost-heading"><i class="fas fa-paperclip"></i> 購入場所</p>
+          <%= f.text_area :place, size: "40X40" %>
+        </div>
+
+        <div class="newpost-check">
+          <p>投稿ボタンを押す前に、入力欄をもう一度確認しましょう</p>
+          <p></p>
+        </div>
+        <div class="submit-box">
+          <%= f.submit '更新する', class: "newpost-submit-btn" %>
+        </div>
+      <% end %>
+
     </div>
-  <% end %>
-  <div class="other_manufacturer_text"><%= f.text_field :other_manufacturer %></div>
-  <h4>値段</h4>
-  <%= f.text_field :price %>
-  <h4>購入場所</h4>
-  <%= f.text_field :place %>
-  <%= f.submit '更新する' %>
-<% end %>
+
+    </div>
+  </div>
+</div>
