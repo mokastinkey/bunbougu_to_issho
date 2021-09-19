@@ -1,52 +1,81 @@
 <div class="post-bungu-container">
   <!--投稿日時、いいね数でソート-->
-<%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
-  <%= f.select :key, [ ['投稿が新しい順', 'new'],
-                       ['投稿が古い順', 'old'],
-                       ['いいねが多い順', 'manylikes'],
-                       ['いいねが少ない順', 'littlelikes'],
-                     ], prompt: "check" %>
-  <%= f.submit "並び替える", class: "sort-box" %>
-<% end %>
+  <div class="sort-box">
+    <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
+      <%= f.select :key, [ ['投稿が新しい順', 'new'],
+                           ['投稿が古い順', 'old'],
+                           ['いいねが多い順', 'manylikes'],
+                           ['いいねが少ない順', 'littlelikes'],
+                         ], prompt: "check" %>
+      <%= f.submit "並び替える", class: "sort-action" %>
+    <% end %>
+  </div>
 
-<% if @selection == 'new' %>
-  <p>投稿が新しい文房具順</p>
-<% elsif @selection == 'old' %>
-  <p>投稿が古い文房具順</p>
-<% elsif @selection == 'manylikes' %>
-  <p>いいねが多めな文房具順</p>
-<% else %>
-  <p>いいねが少なめな文房具順</p>
-<% end %>
-
-<% @post_bungus.each do |post_bungu| %>
-    <div class="bungu">
-      <div class="bungu-photo">
-      <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-        <%= attachment_image_tag bungu_image, :image %>
+  <div class="postnew-box">
+    <div class="subject-box">
+      <% if @selection == 'new' %>
+        <p class="subject-name">文房具 (投稿が新しい順)</p>
+      <% elsif @selection == 'old' %>
+        <p class="subject-name">文房具(投稿が古い順)</p>
+      <% elsif @selection == 'manylikes' %>
+        <p class="subject-name">文房具(いいね順)</p>
+      <% else %>
+        <p class="subject-name">文房具</p>
       <% end %>
-      </div>
-      <div class="bungu-info">
-        <p><%= post_bungu.created_at.to_s(:datetime_jp) %></p>
-        <p><%= post_bungu.catchphrase %></p>
-        <p><%= post_bungu.bungu_name %></p>
-        <p><%= post_bungu.user.nickname %></p>
-      <%= link_to '投稿詳細へ', post_bungu_path(post_bungu) %>
-      </div>
-      <div>
-        <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
-          <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
-              <p>いいね: <%= post_bungu.likes.count %>ポイント</p>
-          <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
-            <div id="btn_<%= post_bungu.id %>">
-              <% if current_user.liked_by?(post_bungu) %>
-                <%= render 'likes/unlike_button', post_bungu: post_bungu %>
-              <% else %>
-                <%= render 'likes/like_button', post_bungu: post_bungu %>
+    </div>
+    <div class="index-post-bungus">
+      <% @post_bungus.each do |post_bungu| %>
+        <div class="bungu">
+          <div class="bungu-photo">
+            <% if post_bungu.bungu_images.present? %>
+              <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
+                <%= attachment_image_tag bungu_image, :image %>
+              <% end %>
+            <%else %>
+              <%= image_tag 'test.jpg', size: '200x200' %>
+            <% end %>
+          </div>
+          <div class="bungu-info">
+            <div class="post-detail">
+              <p class="post-time"><i class="far fa-clock"></i> <%= post_bungu.created_at.to_s(:datetime_jp) %></p>
+              <%= link_to user_path(post_bungu.user_id) do %><p class="post-name"><i class="far fa-user"></i> <%= post_bungu.user.nickname %></p><% end %>
+            </div>
+            <div class="bungu-detail">
+              <%= link_to post_bungu_path(post_bungu) do %>
+                <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
+                <p class="bungu-name">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
               <% end %>
             </div>
-          <% end %>
-        <% end %>
-      </div>
+
+            <div>
+              <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
+                <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
+                    <p class="like-count"><%= post_bungu.likes.count %> Like !</i></p>
+                <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
+                  <div id="btn_<%= post_bungu.id %>">
+                    <% if current_user.liked_by?(post_bungu) %>
+                      <%= render 'likes/unlike_button', post_bungu: post_bungu %>
+                    <% else %>
+                      <%= render 'likes/like_button', post_bungu: post_bungu %>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
+
+  <!-- キーワード検索 -->
+  <div class="keyword-search-box">
+    <%= form_with url: finder_path, local: :true do |f| %>
+      <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
+      <%= f.text_field :word, placeholder: "キーワードを入力" %>
+      <%= f.submit "検索", class: "keyword-submit-btn" %>
+    <% end %>
+  </div>
+
+</div>
