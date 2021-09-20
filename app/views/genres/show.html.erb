@@ -1,41 +1,49 @@
- <!--ジャンル選択のサイドバー render "genres_sidebar", genres: @genres %> -->
+ <div class="post-index-box">
+  <div class="post-bungu-container">
 
-<!-- ジャンル選択のサイドバー -->
-<div class="subject-box">
-  <% if @post_bungus.present? %>
-    <% if @genre.id == 1 %>
-      <p class="subject-name">ボールペン</p>
-    <% elsif @genre.id == 2 %>
-      <p class="subject-name">シャープペンシル系</p>
-    <% elsif @genre.id == 3 %>
-      <p class="subject-name">色付きペン</p>
-    <% elsif @genre.id == 4 %>
-      <p class="subject-name">その他「書くもの」</p>
-    <% elsif @genre.id == 5 %>
-      <p class="subject-name">ノート/ルーズリーフ/メモ</p>
-    <% elsif @genre.id == 6 %>
-      <p class="subject-name">手帳</p>
-    <% elsif @genre.id == 7 %>
-      <p class="subject-name">付箋</p>
-    <% elsif @genre.id == 8 %>
-      <p class="subject-name">その他「書かれるもの」</p>
-    <% elsif @genre.id == 9 %>
-      <p class="subject-name">のり/テープのり</p>
-    <% elsif @genre.id == 10 %>
-      <p class="subject-name">テーブ/マスキングテーブル</p>
-    <% elsif @genre.id == 11 %>
-      <p class="subject-name">シール/スタンプ</p>
-    <% elsif @genre.id == 12 %>
-      <p class="subject-name">定規/メジャー/ストップウォッチ</p>
-    <% elsif @genre.id == 13 %>
-      <p class="subject-name">ペンケース/ファイル</p>
-    <% elsif @genre.id == 14 %>
-      <p class="subject-name">その他文房具</p>
-    <% end %>
-  <% else %>
-    <p>該当する文房具が見つかりませんでした</p>
-  <% end %>
+
+    <div class="subject-box">
+      <% if @post_bungus.present? %>
+        <% if @genre.id == 1 %>
+          <p class="subject-name">ボールペン</p>
+        <% elsif @genre.id == 2 %>
+          <p class="subject-name">シャープペンシル系</p>
+        <% elsif @genre.id == 3 %>
+          <p class="subject-name">色付きペン</p>
+        <% elsif @genre.id == 4 %>
+          <p class="subject-name">その他「書くもの」</p>
+        <% elsif @genre.id == 5 %>
+          <p class="subject-name">ノート/ルーズリーフ/メモ</p>
+        <% elsif @genre.id == 6 %>
+          <p class="subject-name">手帳</p>
+        <% elsif @genre.id == 7 %>
+          <p class="subject-name">付箋</p>
+        <% elsif @genre.id == 8 %>
+          <p class="subject-name">その他「書かれるもの」</p>
+        <% elsif @genre.id == 9 %>
+          <p class="subject-name">のり/テープのり</p>
+        <% elsif @genre.id == 10 %>
+          <p class="subject-name">テーブ/マスキングテーブル</p>
+        <% elsif @genre.id == 11 %>
+          <p class="subject-name">シール/スタンプ</p>
+        <% elsif @genre.id == 12 %>
+          <p class="subject-name">定規/メジャー/ストップウォッチ</p>
+        <% elsif @genre.id == 13 %>
+          <p class="subject-name">ペンケース/ファイル</p>
+        <% elsif @genre.id == 14 %>
+          <p class="subject-name">その他文房具</p>
+        <% end %>
+      <% else %>
+        <p>該当する文房具が見つかりませんでした</p>
+      <% end %>
+    </div>
+    <div class="index-post-bungus">
+      <%= render 'post_bungus/content', post_bungus: @post_bungus %>
+    </div>
+
+  </div>
+
+  <!-- ジャンル検索-->
+  <%= render "post_bungus/genre" %>
+
 </div>
-<div class="index-post-bungus">
-  <%= render 'post_bungus/content', post_bungus: @post_bungus %>
-</div
