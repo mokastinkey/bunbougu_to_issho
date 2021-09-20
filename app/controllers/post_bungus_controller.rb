@@ -3,12 +3,7 @@ class PostBungusController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @selection = params[:key]
-    if not @selection
-      @post_bungus = PostBungu.all
-    else
-      @post_bungus = PostBungu.sort(@selection)
-    end
+    @post_bungus = PostBungu.all.order(created_at: :desc)
     @genres = Genre.all
     # ランキング
     @week_like_ranks = PostBungu.find(Like.group(:post_bungu_id).where(created_at: Time.current.all_week).order('count(post_bungu_id) desc').limit(5).pluck(:post_bungu_id))
@@ -58,7 +53,7 @@ class PostBungusController < ApplicationController
   def search
     @selection = params[:key]
     if not @selection
-      @post_bungus = PostBungu.all
+      @post_bungus = PostBungu.all.order(created_at: :desc)
     else
       @post_bungus = PostBungu.sort(@selection)
     end
