@@ -3,14 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // indexページ ////////////////////////////
-.user-container {
-  // display: flex;
+.user-all-box {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.user-container li {
+  border-bottom: 0.2rem dashed green;
+  width: 95%;
+  margin: 0 auto;
 }
 
 .user-item {
   width: 90%;
   margin-bottom: 2rem;
-  border-bottom: 0.2rem dashed green;
   display: flex;
   margin: 0.1rem auto;
 }
@@ -35,6 +44,49 @@
   margin-bottom: 0.1rem;
   font-size: 0.7rem;
 }
+
+.me-box {
+  margin: 2rem;
+  display: flex;
+  @media screen and (min-width: 768px) {
+    width: 25%;
+    display: block;
+  }
+  img {
+    border-radius: 50%;
+    @media screen and (min-width: 768px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+.nickname-box {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+.nickname-box p {
+  margin-bottom: 0;
+  @media screen and (min-width: 768px) {
+   font-size: 1.2rem;
+  }
+}
+
+.user-content-list {
+  @media screen and (min-width: 768px) {
+    width: 100%;
+  }
+}
+
+// .me-box p {
+//   display: inline-block;
+// }
 
 // showページ ////////////////////////////
 .profile-container {
