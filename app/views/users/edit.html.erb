@@ -1,10 +1,23 @@
-<p>ユーザー編集画面</p>
-<%= form_with model: @user, local: true do |f| %>
-  <h5>ニックネーム</h5>
-  <%= f.text_field :nickname, autofocus: true %>
-  <h5>プロフィール画像</h5>
-  <%= f.attachment_field :profile_image %>
-  <h5>ユーザー紹介</h5>
-  <%= f.text_field :self_introduction %>
-  <%= f.submit "更新する" %>
-<% end %>
+<div class="user-card-box">
+  <div class="user-card-head">
+    <p><%= @user.nickname %> 情報更新カード</p>
+  </div>
+  <div class="card-padding">
+    <%= form_with model: @user, local: true do |f| %>
+      <div class="user-edit-box">
+        <p>ニックネーム</p>
+        <%= f.text_field :nickname, autofocus: true, size: "40X40" %>
+      </div>
+      <div class="user-edit-box">
+        <p>プロフィール画像</p>
+        <%= f.attachment_field :profile_image %>
+      </div>
+      <div class="user-edit-box">
+        <p>ユーザー紹介</p>
+        <%= f.text_area :self_introduction, size: "40X40", class: "edit-intro-area" %>
+      </div>
+      <%= f.submit "更新する", class: "user-edit-finish" %>
+    <% end %>
+  </div>
+
+</div>
