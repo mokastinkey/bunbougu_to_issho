@@ -1,41 +1,47 @@
-<div class="post-bungu-container">
-  <!--投稿日時、いいね数でソート-->
-  <div class="sort-box">
-    <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
-      <%= f.select :key, [ ['投稿が新しい順', 'new'],
-                           ['投稿が古い順', 'old'],
-                           ['いいねが多い順', 'manylikes'],
-                           ['いいねが少ない順', 'littlelikes'],
-                         ], prompt: "check" %>
-      <%= f.submit "並び替える", class: "sort-action" %>
-    <% end %>
-  </div>
-
-  <div class="postnew-box">
-    <div class="subject-box">
-      <% if @selection == 'new' %>
-        <p class="subject-name">文房具 (投稿が新しい順)</p>
-      <% elsif @selection == 'old' %>
-        <p class="subject-name">文房具(投稿が古い順)</p>
-      <% elsif @selection == 'manylikes' %>
-        <p class="subject-name">文房具(いいね順)</p>
-      <% else %>
-        <p class="subject-name">文房具</p>
+<div class="post-index-box">
+  <div class="post-bungu-container">
+    <!--投稿日時、いいね数でソート-->
+    <div class="sort-box">
+      <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
+        <%= f.select :key, [ ['投稿が新しい順', 'new'],
+                             ['投稿が古い順', 'old'],
+                             ['いいねが多い順', 'manylikes'],
+                             ['いいねが少ない順', 'littlelikes'],
+                           ], prompt: "check" %>
+        <%= f.submit "並び替える", class: "sort-action" %>
       <% end %>
     </div>
-    <div class="index-post-bungus">
-      <%= render 'post_bungus/content', post_bungus: @post_bungus %>
 
+    <div class="postnew-box">
+      <div class="subject-box">
+        <% if @selection == 'new' %>
+          <p class="subject-name">文房具 (投稿が新しい順)</p>
+        <% elsif @selection == 'old' %>
+          <p class="subject-name">文房具(投稿が古い順)</p>
+        <% elsif @selection == 'manylikes' %>
+          <p class="subject-name">文房具(いいね順)</p>
+        <% else %>
+          <p class="subject-name">文房具</p>
+        <% end %>
+      </div>
+      <div class="index-post-bungus">
+        <%= render 'post_bungus/content', post_bungus: @post_bungus %>
+
+      </div>
     </div>
+
+    <!-- キーワード検索 -->
+    <div class="keyword-search-box">
+      <%= form_with url: finder_path, local: :true do |f| %>
+        <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
+        <%= f.text_field :word, placeholder: "キーワードを入力" %>
+        <%= f.submit "検索", class: "keyword-submit-btn" %>
+      <% end %>
+    </div>
+
   </div>
 
-  <!-- キーワード検索 -->
-  <div class="keyword-search-box">
-    <%= form_with url: finder_path, local: :true do |f| %>
-      <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
-      <%= f.text_field :word, placeholder: "キーワードを入力" %>
-      <%= f.submit "検索", class: "keyword-submit-btn" %>
-    <% end %>
-  </div>
+  <!-- ジャンル検索-->
+  <%= render "genre" %>
 
 </div>
