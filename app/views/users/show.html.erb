@@ -25,9 +25,9 @@
     </div>
 
     <% if user_signed_in? && @user != current_user %>
-        <span id='follow-btn_#{ @user.id }'>
-          <%= render 'users/follow_btn', user: @user %>
-        </span>
+      <div id='follow-btn_#{ @user.id }', class="follow-btnbox">
+        <%= render 'users/follow_btn', user: @user %>
+      </div>
     <% end %>
     <div class="profile-btn">
       <% if @user == current_user %>

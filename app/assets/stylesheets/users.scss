@@ -78,13 +78,24 @@
   padding-left: 1.2rem;
 }
 
+.follow-btnbox {
+  text-align: center;
+}
+
 .follow-btn {
   border: 1px solid;
   display: inline-block;
-  width: 10rem;
   text-align: center;
-  margin-left: 8rem;
   margin-top: 1rem;
+  background-color: green;
+  padding: 0.4rem;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.tomato-btn {
+  background-color: tomato;
 }
 
 .profile-edit {
