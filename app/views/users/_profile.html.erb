@@ -1,0 +1,55 @@
+<div class="my-profile">
+    <div class="profile-top">
+      <div class="profile-photo">
+        <%= attachment_image_tag user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "20X20" %>
+      </div>
+      <div class="profile-content">
+        <p class="profile-nickname"><%= user.nickname %></p>
+        <div class="follow-check">
+          <div id='following-count_#{ @user.id }'>
+            <p class="follow-mark">フォロー</p>
+            <div class="follow-number">
+              <%= link_to "#{ user.following.count }", users_following_path(user) %>
+            </div>
+          </div>
+          <div id='follower-count_#{ @user.id }'>
+            <p class="follow-mark no-margin">フォロワー</p>
+            <div class="follow-number">
+              <%= link_to "#{ user.follower.count }", users_follower_path(user) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if user_signed_in? && user != current_user %>
+      <div id='follow-btn_#{ @user.id }', class="follow-btnbox">
+        <%= render 'users/follow_btn', user: user %>
+      </div>
+    <% end %>
+    <div class="profile-btn">
+      <% if user == current_user %>
+        <div class="profile-edit">
+          <%= link_to "プロフィール編集", edit_user_path(user) %>
+        </div>
+      <% end %>
+      <div class="switch-btn">
+        <% if user == current_user %>
+          <% if post_bungus == user.post_bungus %>
+            <%= link_to my_like_path(current_user) do %>
+              <p class="switch-color">お気に入り投稿へ →</p>
+            <% end %>
+          <% else %>
+            <%= link_to user_path(current_user) do %>
+              <p class="switch-color">自分の投稿一覧へ →</p>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="intro-box">
+      <span class="self-intro">自己紹介 / memo</span>
+      <p><%= user.self_introduction %></p>
+    </div>
+  </div>
