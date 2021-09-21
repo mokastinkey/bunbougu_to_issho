@@ -1,6 +1,10 @@
-<div class="user-card-box">
+<div class="profile-container">
+
+  <%= render 'profile', post_bungus: @post_bungus, user: @user %>
+
+  <div class="user-card-box">
   <div class="user-card-head">
-    <p><%= @user.nickname %> 情報更新カード</p>
+    <p>プロフィール更新</p>
   </div>
   <div class="card-padding">
     <%= form_with model: @user, local: true do |f| %>

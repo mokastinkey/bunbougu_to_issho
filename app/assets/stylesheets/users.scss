@@ -238,6 +238,11 @@
   margin: 2rem auto;
   border: 1px solid;
   border-radius: 5%;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    margin-left: auto;
+    width : 50%;
+  }
 }
 
 .user-card-head {
@@ -245,6 +250,8 @@
   border-bottom: 1px solid;
   p {
     margin-bottom: 0;
+    font-size: 1.1rem;
+    padding: 0.7rem;
   }
 }
 
