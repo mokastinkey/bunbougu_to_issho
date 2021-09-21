@@ -1,3 +1,93 @@
 // Place all the styles related to the PostComments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.comment-box {
+  padding-top: 1rem;
+  border-top: 3px solid lightgray;
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 20%;
+    border-top: 0;
+    margin: 0;
+    padding-top: 3rem;
+    padding-left: 1rem;
+    border-left: 1px solid lightgray;
+  }
+}
+
+.comment-create {
+  position: relative;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #eedcb3;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  @media screen and (max-width: 768px) {
+    margin: 2rem 0;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.comment-create:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #eedcb3; //ベージュ
+}
+
+.comment-top {
+  text-align: center;
+}
+
+#comments_area {
+  // display: flex;
+}
+
+.comment-show {
+  width: 100%;
+  margin-left: 0.5rem;
+  p {
+    white-space: pre-wrap;
+  }
+}
+
+.user-image-shape {
+  border-radius: 50%;
+}
+
+.comment-nickname {
+  margin-bottom: 0.1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.post-comment {
+  font-size: 0.9rem;
+}
+
+.comment-content {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.comment-text-area {
+  padding: 0.3rem;
+}
+
+.comment-action input {
+  padding: 0.1rem 1rem;
+  background-color: #eedcb3; //ベージュ
+  border: none;
+}

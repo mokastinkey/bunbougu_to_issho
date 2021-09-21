@@ -268,8 +268,8 @@ select#key, #post_bungu_key {
 // new.html ///////////////////////////////
 
 .new-post-box {
-  background-image: url('bungu.jpg');
-  background-size:  cover;
+  // background-image: url('bungu.jpg');
+  // background-size:  cover;
   padding-top: 2rem;
 }
 
@@ -277,8 +277,12 @@ select#key, #post_bungu_key {
   text-align: center;
 }
 
-.post-bg {
+.post-index-container {
   background-color: rgba(255, 255, 255, 0.94);
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .newpost-index {
@@ -346,6 +350,10 @@ select#key, #post_bungu_key {
   padding-top: 2.5rem;
   width: 90%;
   margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    width: 60%;
+  }
 }
 
 .show-bungu-heading {
@@ -391,6 +399,10 @@ select#key, #post_bungu_key {
 #bungu-table {
   width: 80%;
   margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 60%;
+    margin: 5rem auto;
+  }
 }
 
 .editdestroy-btn-box {
@@ -400,6 +412,7 @@ select#key, #post_bungu_key {
   justify-content: space-between;
   width: 30%;
   padding-right: 1rem;
+  margin-bottom: 3rem;
 }
 
 .edit-btn {

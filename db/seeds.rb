@@ -19,6 +19,12 @@ User.create!(
       email: 'test2@test.com',
       password: 'testtest',
       self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
+    },
+    {
+      nickname: 'テスト3',
+      email: 'test3@test.com',
+      password: 'testtest',
+      self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
     }
   ]
 )
@@ -44,6 +50,72 @@ Genre.create!(
 
 PostBungu.create!(
   [
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
+    {
+      user_id: 1,
+      genre_id: 1,
+      bungu_name: 'kurutoga',
+      manufacturer: 2,
+      catchphrase: '書いても書いてもとんがっている！',
+      rate: 5,
+      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+      price: 390,
+      place: 'ロフト渋谷'
+    },
     {
       user_id: 1,
       genre_id: 1,

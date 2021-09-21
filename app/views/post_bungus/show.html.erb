@@ -1,17 +1,17 @@
 <div class="new-post-box">
-  <div class="post-bg">
+  <div class="post-index-container">
     <div class="show-post-box">
       <div class="show-bungu-heading">
-        <div class="post-day">
-          <p>投稿日 <%= @post_bungu.created_at.to_s(:datetime_jp) %><p>
-        </div>
 
         <p class="catchphrase-heading"><%= @post_bungu.catchphrase %></p>
         <p class="bungu-name">「 <%= @post_bungu.bungu_name %> 」</p>
+        <div class="bungu-rate" data-score="<%= @post_bungu.rate %>"></div>
+      　<%= render 'post_bungus/star' %>
+        <div class="post-day">
+          <p>投稿日 <%= @post_bungu.created_at.to_s(:datetime_jp) %><p>
+        </div>
+        
       </div>
-
-      <div class="bungu-rate" data-score="<%= @post_bungu.rate %>"></div>
-      <%= render 'post_bungus/star' %>
 
       <div class="thought">
         <p><%= @post_bungu.thought %></p>
