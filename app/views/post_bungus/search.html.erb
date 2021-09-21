@@ -1,17 +1,6 @@
 <div class="post-index-box">
   <div class="post-bungu-container">
     <!--投稿日時、いいね数でソート-->
-    <div class="sort-box">
-      <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
-        <%= f.select :key, [ ['投稿が新しい順', 'new'],
-                             ['投稿が古い順', 'old'],
-                             ['いいねが多い順', 'manylikes'],
-                             ['いいねが少ない順', 'littlelikes'],
-                           ], prompt: "check" %>
-        <%= f.submit "並び替える", class: "sort-action" %>
-      <% end %>
-    </div>
-
     <div class="postnew-box">
       <div class="subject-box">
         <% if @selection == 'new' %>
@@ -24,6 +13,18 @@
           <p class="subject-name">文房具</p>
         <% end %>
       </div>
+
+      <div class="sort-box">
+        <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
+          <%= f.select :key, [ ['投稿が新しい順', 'new'],
+                               ['投稿が古い順', 'old'],
+                               ['いいねが多い順', 'manylikes'],
+                               ['いいねが少ない順', 'littlelikes'],
+                             ], prompt: "check" %>
+          <%= f.submit "並び替える", class: "sort-action" %>
+        <% end %>
+      </div>
+
       <div class="index-post-bungus">
         <%= render 'post_bungus/content', post_bungus: @post_bungus %>
 

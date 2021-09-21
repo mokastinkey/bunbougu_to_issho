@@ -8,11 +8,11 @@
   }
 }
 
-.ranking-container {
-  @media screen and (min-width: 768px) {
-    margin-top: 1.5rem;
-  }
-}
+// .ranking-container {
+//   @media screen and (min-width: 768px) {
+//     margin-top: 1.5rem;
+//   }
+// }
 
 .post-index-box {
   margin-bottom: 3rem;
@@ -23,7 +23,7 @@
 }
 
 .postnew-box {
-  margin-top: 5rem;
+  // margin-top: 5rem;
 }
 
 
@@ -170,8 +170,12 @@
 
 // ソート機能
 .sort-box {
-  width: 90%;
+  width: 94%;
   margin: 0 auto;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 768px) {
+    width: 86%;
+  }
 }
 
 select#key, #post_bungu_key {
@@ -223,6 +227,7 @@ select#key, #post_bungu_key {
 // ランキング
 .ranking-container {
   margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 .rank-number {
