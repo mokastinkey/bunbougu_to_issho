@@ -92,20 +92,22 @@
 .profile-container {
   margin-top: 2rem;
   @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: space-evenly;
+    // display: flex;
+    // justify-content: space-evenly;
   }
 }
 
 .my-profile {
   @media screen and (min-width: 768px) {
     width: 30%;
+    position: fixed;
   }
 }
 
 .my-post-all {
   @media screen and (min-width: 768px) {
     width: 60%;
+    margin-left: auto;
   }
 }
 
