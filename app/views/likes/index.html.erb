@@ -14,47 +14,7 @@
 
     <div class="index-post-bungus">
 
-      <% @post_bungus.each do |post_bungu| %>
-        <div class="bungu">
-          <div class="bungu-photo">
-            <% if post_bungu.bungu_images.present? %>
-              <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-                <%= attachment_image_tag bungu_image, :image %>
-              <% end %>
-            <%else %>
-              <%= image_tag 'test.jpg', size: '200x200' %>
-            <% end %>
-          </div>
-          <div class="bungu-info">
-            <div class="post-detail">
-              <p class="post-time"><i class="far fa-clock"></i> <%= post_bungu.created_at.to_s(:datetime_jp) %></p>
-              <%= link_to user_path(post_bungu.user_id) do %><p class="post-name"><i class="far fa-user"></i> <%= post_bungu.user.nickname %></p><% end %>
-            </div>
-            <div class="bungu-detail">
-              <%= link_to post_bungu_path(post_bungu) do %>
-                <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
-                <p class="bungu-name">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
-              <% end %>
-            </div>
-
-            <div>
-              <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
-                <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
-                    <p class="like-count"><%= post_bungu.likes.count %> Like !</i></p>
-                <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
-                  <div id="btn_<%= post_bungu.id %>">
-                    <% if current_user.liked_by?(post_bungu) %>
-                      <%= render 'likes/unlike_button', post_bungu: post_bungu %>
-                    <% else %>
-                      <%= render 'likes/like_button', post_bungu: post_bungu %>
-                    <% end %>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render 'post_bungus/content', post_bungus: @post_bungus %>
     </div>
 
   </div>
