@@ -275,7 +275,7 @@ select#key, #post_bungu_key {
 .new-post-box {
   // background-image: url('bungu.jpg');
   // background-size:  cover;
-  padding-top: 2rem;
+  // padding-top: 2rem;
 }
 
 .stationery-img-box {
@@ -411,13 +411,16 @@ select#key, #post_bungu_key {
 }
 
 .editdestroy-btn-box {
-  margin-left: auto;
+  // margin-left: auto;
   display: flex;
-  margin-top: 3rem;
+  // margin-top: 3rem;
   justify-content: space-between;
   width: 30%;
-  padding-right: 1rem;
-  margin-bottom: 3rem;
+  // padding-right: 1rem;
+  margin-bottom: 1rem;
+  @media screen and (min-width: 768px) {
+    width: 17%;
+  }
 }
 
 .edit-btn {

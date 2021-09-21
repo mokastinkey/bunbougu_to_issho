@@ -3,6 +3,17 @@
     <div class="show-post-box">
       <div class="show-bungu-heading">
 
+        <div class="editdestroy-btn-box">
+          <% if @post_bungu.user_id == current_user.id %>
+            <%= link_to edit_post_bungu_path(@post_bungu) do %>
+              <p class="edit-btn">編集</p>
+            <% end %>
+            <%= link_to post_bungu_path(@post_bungu), method: :delete do %>
+              <p class="destroy-btn">削除</p>
+            <% end %>
+          <% end %>
+        </div>
+
         <p class="catchphrase-heading"><%= @post_bungu.catchphrase %></p>
         <p class="bungu-name">「 <%= @post_bungu.bungu_name %> 」</p>
         <div class="bungu-rate" data-score="<%= @post_bungu.rate %>"></div>
@@ -10,7 +21,7 @@
         <div class="post-day">
           <p>投稿日 <%= @post_bungu.created_at.to_s(:datetime_jp) %><p>
         </div>
-        
+
       </div>
 
       <div class="thought">
@@ -39,17 +50,6 @@
           </tr>
         </tbody>
       </table>
-
-      <div class="editdestroy-btn-box">
-        <% if @post_bungu.user_id == current_user.id %>
-          <%= link_to edit_post_bungu_path(@post_bungu) do %>
-            <p class="edit-btn">編集</p>
-          <% end %>
-          <%= link_to post_bungu_path(@post_bungu), method: :delete do %>
-            <p class="destroy-btn">削除</p>
-          <% end %>
-        <% end %>
-      </div>
 
       <div class="display">
         <% @post_bungu.bungu_images.each do |bungu_image| %>
