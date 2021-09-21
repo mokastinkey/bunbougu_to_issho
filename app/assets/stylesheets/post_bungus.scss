@@ -270,6 +270,11 @@ select#key, #post_bungu_key {
 .new-post-box {
   background-image: url('bungu.jpg');
   background-size:  cover;
+  padding-top: 2rem;
+}
+
+.stationery-img-box {
+  text-align: center;
 }
 
 .post-bg {
@@ -290,7 +295,7 @@ select#key, #post_bungu_key {
 // }
 
 .newpost {
-  padding-top: 3rem;
+  padding-top: 1rem;
   margin: 0 auto;
   width: 90%;
 }
