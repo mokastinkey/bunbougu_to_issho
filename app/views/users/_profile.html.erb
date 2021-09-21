@@ -35,7 +35,7 @@
       <% end %>
       <div class="switch-btn">
         <% if user == current_user %>
-          <% if post_bungus == user.post_bungus %>
+          <% if post_bungus == user.post_bungus.order(created_at: :desc) %>
             <%= link_to my_like_path(current_user) do %>
               <p class="switch-color">お気に入り投稿へ →</p>
             <% end %>

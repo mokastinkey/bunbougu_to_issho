@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @post_bungus = @user.post_bungus
+    @post_bungus = @user.post_bungus.order(created_at: :desc)
   end
 
   def index

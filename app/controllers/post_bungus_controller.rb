@@ -27,7 +27,7 @@ class PostBungusController < ApplicationController
   def show
     @post_bungu = PostBungu.find(params[:id])
     @post_comment = PostComment.new
-    @post_comments = @post_bungu.post_comments.order(created_at: :asc)
+    @post_comments = @post_bungu.post_comments.order(created_at: :desc)
   end
 
   def edit
