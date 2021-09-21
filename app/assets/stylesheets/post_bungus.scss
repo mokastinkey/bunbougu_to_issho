@@ -75,9 +75,6 @@
   margin: 0 auto;
   justify-content: space-evenly;
   @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
     max-width: 80rem;
   }
 }
