@@ -91,6 +91,22 @@
 // showページ ////////////////////////////
 .profile-container {
   margin-top: 2rem;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.my-profile {
+  @media screen and (min-width: 768px) {
+    width: 30%;
+  }
+}
+
+.my-post-all {
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
 }
 
 .profile-top {
