@@ -298,6 +298,11 @@ select#key, #post_bungu_key {
   padding-top: 1rem;
   margin: 0 auto;
   width: 90%;
+  @media screen and (min-width: 768px) {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+  }
 }
 
 .newpost-form-box {
@@ -317,6 +322,11 @@ select#key, #post_bungu_key {
 .submit-box {
   text-align: center;
 }
+
+.newpost-check {
+  text-align: center;
+}
+
 
 .newpost-submit-btn {
   border: none;
