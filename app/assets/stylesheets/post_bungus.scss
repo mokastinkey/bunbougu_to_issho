@@ -251,6 +251,9 @@ select#key, #post_bungu_key {
   @media screen and (min-width: 768px) {
     padding: 0.5rem 0;
   }
+  img {
+    border-radius: 20%;
+  }
 }
 
 .bungu-name-rank {
