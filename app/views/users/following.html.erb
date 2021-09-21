@@ -1,9 +1,4 @@
-<% @users.each do |user| %>
-  <%= user.nickname %>
-  <%= attachment_image_tag user, :profile_image, format: 'jpeg' %>
-  <% unless user == current_user %>
-  <span id='follow-btn_#{ user.id }'>
-    <%= render 'users/follow_btn', user: user%>
-  </span>
-  <% end %>
-<% end %>
+<%= render 'user_index', user: @user, users: @users %>
+
+
+

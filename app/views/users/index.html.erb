@@ -1,12 +1,1 @@
-<div class="user-all-box">
-  <div class="me-box">
-    <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "test.jpg", size: "100x100" %>
-    <div class="nickname-box">
-      <p><%= @user.nickname %></p>
-    </div>
-  </div>
-  <div class="user-content-list">
-    <%= render 'userlist', users: @users %>
-  </div>
-
-</div>
+<%= render 'user_index', user: @user, users: @users %>
