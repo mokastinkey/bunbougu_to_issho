@@ -82,7 +82,7 @@
   display: none;
   height: 100vh;
   padding: 1.4rem;
-  background-color: lemonchiffon;
+  background-color: #f7f7f8;
 }
 
 .nav-inner {
@@ -140,14 +140,21 @@
 
 .pc-genre {
   @media screen and (min-width: 768px) {
-    padding: 2rem;
+    padding: 1rem;
+    padding-top: 0.5rem;
     position: fixed;
     overflow: auto;
     height: 70vh;
+    background-color: #f7f7f8;
     li {
       line-height: 2rem;
     }
   }
+}
+
+.pc-genre p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
 // ハンバーガーメニュー背景色(jquery)
