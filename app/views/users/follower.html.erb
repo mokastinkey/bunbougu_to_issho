@@ -1,2 +1,4 @@
-<p><%= @user.nickname %>をフォローしているユーザー</p>
+<div class="follow-line">
+  <p><%= @user.nickname %>をフォローしているユーザー</p>
+</div>
 <%= render 'user_index', user: @login_user, users: @users %>
