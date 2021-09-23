@@ -21,7 +21,7 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- font-family: 'Noto Sans';
+ font-family: 'logotype'; // Note Sans
  font-size: 1rem;
  text-decoration: none;
  list-style: none;
@@ -44,9 +44,9 @@ main {
  }
 }
 
-// @font-face {
-//   font-family: 'Boku';
-//   src: url('Boku2-Regular.otf') format('opentype');
-//   font-weight: bold;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'logotype';
+  src: url('logotype.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}

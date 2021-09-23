@@ -1,3 +1,46 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// aboutページ ////////
+
+.top-title {
+  text-align: center;
+  margin-top: 2rem;
+  h4 {
+    line-height: 1.8;
+  }
+}
+
+.bungu-expand {
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.about-photo {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
+.comment-topic {
+  margin-bottom: 1rem;
+  fone-size: 1rem;
+  display: inline-block;
+  line-height: 0.3;
+  border-bottom: 5px solid lightgray;
+}
+
+.about-comment-box {
+  width: 40%;
+  p {
+    font-size: 0.9rem;
+  }
+}
+
