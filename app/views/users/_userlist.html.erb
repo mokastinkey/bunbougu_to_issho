@@ -8,7 +8,9 @@
       <div class="user-index">
         <p class="profile-nickname"><%= link_to user_path(user) do %><%= user.nickname %><% end %></p>
         <div><span>投稿: </span><%= user.post_bungus.count %></div>
-        <p class="user-intro"><%= user.self_introduction.truncate(50) %></p>
+        <% if user.self_introduction != nil %>
+          <p class="user-intro"><%= user.self_introduction.truncate(50) %></p>
+        <% end %>
       </div>
     </div>
   </li>
