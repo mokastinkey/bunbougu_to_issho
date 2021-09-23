@@ -19,7 +19,6 @@ class PostBungusController < ApplicationController
     if @post_bungu.save
       redirect_to post_bungus_path
     else
-      @post_bungu = PostBungu.new
       render :new
     end
   end

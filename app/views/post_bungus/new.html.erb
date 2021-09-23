@@ -1,8 +1,13 @@
 <div class="new-post-box">
   <div class="post-bg">
     <div class="newpost-index">
-
-    <!--<p class="admin-comment">あなたの文房具を<br>紹介してください!</p>-->
+      <% if @post_bungu.errors.any? %>
+        <div class="alert-msg">
+          <% @post_bungu.errors.full_messages.each do |message| %>
+            <%= message %><br>
+          <% end %>
+        </div>
+      <% end %>
       <div class="stationery-img-box">
         <%= image_tag 'stationery_01.png', size: '300x200' %>
       </div>

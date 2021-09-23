@@ -23,6 +23,14 @@ class PostBungu < ApplicationRecord
     other: 6
   }
 
+  with_options presence: true do
+    validates :bungu_name
+    validates :catchphrase
+    validates :rate
+    validates :price
+    validates :place
+  end
+
   validates :other_manufacturer, length: { maximum: 20 }, presence: true, if: :others_manufacturer?
 
   def others_manufacturer?

@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      post_bungu: 文房具
+    attributes:
+      user:
+        nickname: ニックネーム
+      post_bungu:
+        bungu_name: 商品名
+        catchphrase: 文房具のキャッチフレーズ
+        rate: 星評価
+        price: 購入金額
+        place: 購入場所
+        other_manufacturer: その他メーカー名
