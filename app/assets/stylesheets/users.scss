@@ -264,7 +264,7 @@
 
 .card-padding {
   padding: 1rem;
-  background-color: lightgrey;
+  background-color: #f7f7f8;
   border-radius: 0 0 5% 5%;
   p {
     font-weight: 600;
@@ -283,4 +283,6 @@
 .user-edit-finish {
   padding: 0.5rem;
   border: none;
+  color: #fff;
+  background-color: #ee7b1a;
 }
