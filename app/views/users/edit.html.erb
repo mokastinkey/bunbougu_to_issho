@@ -1,4 +1,12 @@
 <div class="profile-container">
+  <% if @user.errors.any? %>
+    <div class="alert-msg">
+      <% @user.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+    </div>
+
+  <% end %>
 
   <%= render 'profile', post_bungus: @post_bungus, user: @user %>
 
