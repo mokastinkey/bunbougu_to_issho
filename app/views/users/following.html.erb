@@ -2,6 +2,7 @@
   <p><%= @user.nickname %>がフォローしているユーザー</p>
 </div>
 <%= render 'user_index', user: @login_user, users: @users %>
+<%= paginate @users %>
 
 
 
