@@ -50,3 +50,25 @@ main {
   font-weight: bold;
   font-style: normal;
 }
+
+.pagination {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  @media screen and (min-width: 768px) {
+    margin-left: 40%;
+  }
+}
+
+.page {
+  padding: 0.5rem;
+}
+
+.next, .last, .first, .prev {
+  padding: 0.5rem;
+}
+
+
+
+// .current
+//     padding: 0.5rem;
+//   }
