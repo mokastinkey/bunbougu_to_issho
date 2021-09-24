@@ -1,0 +1,8 @@
+<!-- キーワード検索 -->
+<div class="keyword-search-box">
+  <%= form_with url: finder_path, local: :true do |f| %>
+    <%= f.select :scope, options_for_select([['ユーザー', 'User'], ['商品名', 'PostBungu']]) %>
+    <%= f.text_field :word, placeholder: "キーワードを入力", size: "25x40" %>
+    <%= f.submit "検索", class: "keyword-submit-btn" %>
+  <% end %>
+</div>
