@@ -4,9 +4,9 @@ class FindersController < ApplicationController
     @word = params[:word]
 
     if @scope == 'User'
-      @users = User.looks(@word)
+      @users = User.looks(@word).page(params[:page]).reverse_order.per(2)
     else
-      @post_bungus = PostBungu.looks(@word)
+      @post_bungus = PostBungu.looks(@word).page(params[:page]).reverse_order.per(2)
     end
   end
 end
