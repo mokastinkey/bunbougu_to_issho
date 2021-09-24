@@ -16,11 +16,11 @@
 
       <div class="sort-box">
         <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
-          <%= f.select :key, [ ['投稿が新しい順', 'new'],
+          <%= f.select :key, [
+                               ['投稿が新しい順', 'new'],
                                ['投稿が古い順', 'old'],
-                               ['いいねが多い順', 'manylikes'],
-                               ['いいねが少ない順', 'littlelikes'],
-                             ], prompt: "check" %>
+                               ['いいねが多い順', 'manylikes']
+                             ] %>
           <%= f.submit "並び替える", class: "sort-action" %>
         <% end %>
       </div>

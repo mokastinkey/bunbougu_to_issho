@@ -52,7 +52,7 @@ class PostBungu < ApplicationRecord
     elsif selection == 'manylikes' then
       find(Like.group(:post_bungu_id).order(Arel.sql('count(post_bungu_id) desc')).pluck(:post_bungu_id))
     else
-      find(Like.group(:post_bungu_id).order(Arel.sql('count(post_bungu_id) asc')).pluck(:post_bungu_id))
+     　all.order(created_at: :DESC)
     end
   end
 
