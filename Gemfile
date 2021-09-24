@@ -85,3 +85,6 @@ gem 'pry-byebug'
 
 #bootstrap導入
 gem 'bootstrap', '~> 4.5'
+
+#kaminariインストール
+gem 'kaminari','~> 1.2.1'
