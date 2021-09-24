@@ -52,9 +52,12 @@ class PostBungusController < ApplicationController
   def search
     @selection = params[:key]
     if not @selection
-      @post_bungus = PostBungu.all.order(created_at: :desc)
+      @post_bungus = PostBungu.page(params[:page]).reverse_order.per(6)
+    elsif @selection == 'new' || @selection == 'old'
+      @post_bungus = PostBungu.sort(@selection).page(params[:page]).per(6)
     else
-      @post_bungus = PostBungu.sort(@selection)
+      post_bungus = PostBungu.sort(@selection)
+      @post_bungus = Kaminari.paginate_array(post_bungus).page(params[:page]).per(6)
     end
   # @post_bungus = PostBungu.sort(@selection)
   end
