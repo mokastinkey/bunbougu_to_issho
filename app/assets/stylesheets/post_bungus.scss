@@ -204,6 +204,7 @@ select#key, #post_bungu_key {
   border: none;
   height: 2rem;
   color: #fff;
+  border-radius: 5px;
 }
 
 #word {
@@ -211,6 +212,7 @@ select#key, #post_bungu_key {
   background-color: lightgray;
   border: none;
   height: 2rem;
+  border-radius: 5px;
 }
 
 .keyword-submit-btn {
@@ -221,6 +223,7 @@ select#key, #post_bungu_key {
   margin-left: 1rem;
   height: 2rem;
   color: #fff;
+  border-radius: 5px;
 }
 // ジャンル機能
 .genre-table {
@@ -433,11 +436,13 @@ select#key, #post_bungu_key {
   padding: 0.4rem;
   background-color: green;
   color: #fff;
+  border-radius: 5px;
 }
 
 .destroy-btn {
   padding: 0.4rem;
   background-color: orangered;
   color: #fff;
+  border-radius: 5px;
 }
 
