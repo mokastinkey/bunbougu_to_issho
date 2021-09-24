@@ -9,7 +9,15 @@
   margin-top: 2rem;
   h4 {
     line-height: 1.8;
-    color: #ee7b1a;
+    color: green;
+    font-weight: 700;
+  }
+}
+
+.about-content {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -19,6 +27,10 @@
   width: 90%;
   justify-content: space-between;
   margin-top: 3rem;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+    margin-top: 0;
+  }
 }
 
 .about-photo {
@@ -30,18 +42,45 @@
   }
 }
 
+.wide-photo {
+  justify-content: space-evenly;
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+}
+
 .comment-topic {
   margin-bottom: 1rem;
   fone-size: 1rem;
   display: inline-block;
   line-height: 0.3;
-  border-bottom: 5px solid lightgray;
+  border-bottom: 5px solid orange;
 }
 
 .about-comment-box {
   width: 40%;
+  @media screen and (min-width: 768px) {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    padding: 4rem 0;
+  }
   p {
     font-size: 0.9rem;
   }
 }
+.conn-box {
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 40%;
+  }
+}
 
+.bungu-connect {
+  margin-top: 4rem;
+  img {
+    width: 100%;
+  }
+}
