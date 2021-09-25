@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_user!,except: [:index, :show]
+
   def show
     @user = User.find(params[:id])
     @post_bungus = @user.post_bungus.order(created_at: :desc)
