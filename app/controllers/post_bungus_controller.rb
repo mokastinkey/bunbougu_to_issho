@@ -1,6 +1,8 @@
 class PostBungusController < ApplicationController
   # url直打ち防止
   before_action :correct_user, only: [:edit, :update]
+  # 文房具詳細画面(show.html)を見るには、ログインしていないといけない。indexとsearchはログインしていなくても見ることが可能
+  before_action :authenticate_user!,except: [:index, :search]
 
   def index
     @post_bungus = PostBungu.limit(8).order("created_at DESC")
