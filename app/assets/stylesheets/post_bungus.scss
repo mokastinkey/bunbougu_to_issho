@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post-bungu-container {
-  padding-top: 1.5rem;
+  // padding-top: 1.5rem;
   @media screen and (min-width: 768px) {
     width: 80%;
   }
@@ -18,7 +18,7 @@
   margin-bottom: 3rem;
   @media screen and (min-width: 768px) {
     display: flex;
-    margin-top: 1rem;
+    // margin-top: 1rem;
   }
 }
 
@@ -447,3 +447,11 @@ select#key, #post_bungu_key {
   border-radius: 5px;
 }
 
+// serch/finder/genreページの上部padding
+.bunbougu-box {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+}
