@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// aboutページ ////////
+// aboutページ //////////////////////////////
 
 .top-title {
   text-align: center;
@@ -60,10 +60,8 @@
 .about-comment-box {
   width: 40%;
   @media screen and (min-width: 768px) {
-    /* display: flex; */
     justify-content: center;
     align-items: center;
-    /* text-align: center; */
     padding: 6rem 0;
   }
   p {
