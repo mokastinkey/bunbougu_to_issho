@@ -42,15 +42,11 @@
   left: 50%;
   margin-left: -15px;
   border: 15px solid transparent;
-  border-top: 15px solid #eedcb3; //ベージュ
+  border-top: 15px solid #eedcb3;
 }
 
 .comment-top {
   text-align: center;
-}
-
-#comments_area {
-  // display: flex;
 }
 
 .comment-show {
@@ -89,7 +85,7 @@
 
 .comment-action input {
   padding: 0.1rem 1rem;
-  background-color: #eedcb3; //ベージュ
+  background-color: #eedcb3; 
   border: none;
   border-radius: 5px;
 }
