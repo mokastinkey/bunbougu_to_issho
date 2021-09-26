@@ -15,7 +15,7 @@
         <p class="catchphrase-heading"><%= @post_bungu.catchphrase %></p>
         <p class="bungu-name">「 <%= @post_bungu.bungu_name %> 」</p>
         <div class="bungu-rate" data-score="<%= @post_bungu.rate %>"></div>
-      　<%= render 'post_bungus/star' %>
+        <%= render 'post_bungus/star' %>
         <div class="post-day">
           <p>投稿日 <%= @post_bungu.created_at.to_s(:datetime_jp) %><p>
         </div>
