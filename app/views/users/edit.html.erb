@@ -5,11 +5,8 @@
         <%= message %>
       <% end %>
     </div>
-
   <% end %>
-
   <%= render 'profile', post_bungus: @post_bungus, user: @user %>
-
   <div class="user-card-box">
   <div class="user-card-head">
     <p>プロフィール更新</p>
@@ -31,5 +28,4 @@
       <%= f.submit "更新する", class: "user-edit-finish" %>
     <% end %>
   </div>
-
 </div>
