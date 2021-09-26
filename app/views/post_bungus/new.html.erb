@@ -11,7 +11,6 @@
       <div class="stationery-img-box">
         <%= image_tag 'stationery.png', size: '300x200' %>
       </div>
-
       <%= form_with model:@post_bungu, local:true do |f| %>
         <div class="newpost">
           <div>
@@ -70,7 +69,6 @@
             </div>
           </div>
         </div>
-
         <div class="newpost-check">
           <p>ボタンを押す前に、入力欄をもう一度確認しましょう</p>
         </div>
@@ -78,8 +76,6 @@
           <%= f.submit '投稿する', class: "newpost-submit-btn" %>
         </div>
       <% end %>
-
-
     </div>
   </div>
 </div>
