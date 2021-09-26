@@ -1,30 +1,19 @@
 <div class="new-devise">
-    <h5>ログイン</h5>
-
-    <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-      <div class="field">
-        <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :パスワード %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-
-      <!--<% if devise_mapping.rememberable? %>-->
-      <!--  <div class="field">-->
-      <!--    <%= f.check_box :remember_me %>-->
-      <!--    <%= f.label :remember_me %>-->
-      <!--  </div>-->
-      <!--<% end %>-->
-
-      <div class="action">
-        <%= f.submit "ログイン", class: "action-login" %>
-      </div>
-    <% end %>
-    <div class="devise-jump">
-      <p class="sign-explanation">会員登録がまだの方は<br><%= render "devise/shared/links" %></p>
+  <h5>ログイン</h5>
+  <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+    <div class="field">
+      <%= f.label :メールアドレス %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
-
+    <div class="field">
+      <%= f.label :パスワード %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+    <div class="action">
+      <%= f.submit "ログイン", class: "action-login" %>
+    </div>
+  <% end %>
+  <div class="devise-jump">
+    <p class="sign-explanation">会員登録がまだの方は<br><%= render "devise/shared/links" %></p>
+  </div>
 </div>
