@@ -1,6 +1,6 @@
 <div class="post-index-box">
   <div class="post-bungu-container">
-    
+    <!--スライドショー-->
     <div id="slide-box">
       <div id="slide-images">
         <div class="slide-img1"></div>
@@ -9,7 +9,6 @@
         <div class="slide-img4"></div>
       </div>
     </div>
-
     <!-- ランキング -->
     <div class="ranking-container">
       <div class="subject-box">
@@ -22,11 +21,6 @@
               <p><i class="fas fa-medal"></i> No.<%= i %></p>
             </div>
             <div class="rank-bungu">
-              <!--<div class="bungu-photo">-->
-              <!--<% post_bungu.bungu_images.first(1).each do |bungu_image| %>-->
-              <!--  <%= attachment_image_tag bungu_image, :image %>-->
-              <!--<% end %>-->
-              <!--</div>-->
               <div class="bungu-info">
                 <div class="rank-border">
                   <div class="post-detail">
@@ -48,18 +42,13 @@
                       <%= image_tag 'test.jpg', size: '80x80' %>
                     <% end %>
                   </div>
-
-
                 </div>
               </div>
             </div>
-
           </div>
-
         <% end %>
       </div>
     </div>
-
     <div class="postnew-box">
       <div class="subject-box">
         <p class="subject-name">最新投稿</p>
@@ -67,7 +56,6 @@
       <div class="index-post-bungus">
         <%= render 'post_bungus/content', post_bungus: @post_bungus %>
       </div>
-
       <div class="link-box">
         <div class="post-link">
           <%= link_to search_path do %>
@@ -76,18 +64,9 @@
         </div>
       </div>
     </div>
-
     <!--キーワード検索-->
     <%= render 'keyword' %>
-
-
   </div>
-
   <!-- ジャンル検索-->
   <%= render "genre" %>
-
-
-
-
-
 </div>
