@@ -2,7 +2,6 @@
   <div class="post-index-container">
     <div class="show-post-box">
       <div class="show-bungu-heading">
-
         <div class="editdestroy-btn-box">
           <% if @post_bungu.user_id == current_user.id %>
             <%= link_to edit_post_bungu_path(@post_bungu) do %>
@@ -13,7 +12,6 @@
             <% end %>
           <% end %>
         </div>
-
         <p class="catchphrase-heading"><%= @post_bungu.catchphrase %></p>
         <p class="bungu-name">「 <%= @post_bungu.bungu_name %> 」</p>
         <div class="bungu-rate" data-score="<%= @post_bungu.rate %>"></div>
@@ -21,13 +19,10 @@
         <div class="post-day">
           <p>投稿日 <%= @post_bungu.created_at.to_s(:datetime_jp) %><p>
         </div>
-
       </div>
-
       <div class="thought">
         <p><%= @post_bungu.thought %></p>
       </div>
-
       <table class="table table-striped" id="bungu-table">
         <tbody>
           <tr>
@@ -50,7 +45,6 @@
           </tr>
         </tbody>
       </table>
-
       <div class="display">
         <% @post_bungu.bungu_images.each do |bungu_image| %>
           <div class="show-image">
@@ -59,7 +53,7 @@
         <% end %>
       </div>
     </div>
-      <!--コメント-->
+    <!--コメント-->
     <div class="comment-box">
       <div class="comment-create">
         <p class="comment-top">コメント</p>
@@ -67,14 +61,12 @@
       <div id="comments_area">
         <%= render partial: 'post_comments/index', locals: { post_comments: @post_comments } %>
       </div>
-
-        <% if user_signed_in? %>
-          <div>
-            <p class="text-left"></p>
-            <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post_bungu: @post_bungu } %>
-          </div>
-        <% end %>
+      <% if user_signed_in? %>
+        <div>
+          <p class="text-left"></p>
+          <%= render partial: 'post_comments/form', locals: { post_comment: @post_comment, post_bungu: @post_bungu } %>
+        </div>
+      <% end %>
     </div>
-
   </div>
 </div>
