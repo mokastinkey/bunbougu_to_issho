@@ -1,6 +1,5 @@
 <div class="bunbougu-box">
   <div class="post-bungu-container">
-
     <% if @scope == "User" %>
       <p>ユーザー名「 <%= @word %> 」の検索結果</p>
       <% if @users.present? %>
@@ -20,15 +19,9 @@
       </div>
       <%= paginate @post_bungus %>
     <% end %>
-
-
     <!--キーワード検索-->
     <%= render 'post_bungus/keyword' %>
-
   </div>
-
   <!-- ジャンル検索-->
   <%= render "post_bungus/genre" %>
-
-
 </div>
