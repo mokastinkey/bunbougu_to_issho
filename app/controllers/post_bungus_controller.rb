@@ -19,7 +19,7 @@ class PostBungusController < ApplicationController
     @post_bungu = PostBungu.new(post_bungu_params)
     @post_bungu.user_id = current_user.id
     if @post_bungu.save
-      redirect_to post_bungus_path
+      redirect_to post_bungu_path(@post_bungu)
     else
       render :new
     end
@@ -48,7 +48,7 @@ class PostBungusController < ApplicationController
   def destroy
     post_bungu = PostBungu.find(params[:id])
     post_bungu.destroy
-    redirect_to post_bungus_path
+    redirect_to user_path(current_user)
   end
 
   def search
