@@ -1,7 +1,5 @@
- <div class="bunbougu-box">
+<div class="bunbougu-box">
   <div class="post-bungu-container">
-
-
     <div class="subject-box">
       <% if @post_bungus.present? %>
         <% if @genre.id == 1 %>
@@ -40,13 +38,9 @@
     <div class="index-post-bungus">
       <%= render 'post_bungus/content', post_bungus: @post_bungus %>
     </div>
-
     <!--キーワード検索-->
     <%= render 'post_bungus/keyword' %>
-
   </div>
-
   <!-- ジャンル検索-->
   <%= render "post_bungus/genre" %>
-
 </div>
