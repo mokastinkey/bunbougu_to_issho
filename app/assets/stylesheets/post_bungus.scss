@@ -2,32 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .post-bungu-container {
-  // padding-top: 1.5rem;
   @media screen and (min-width: 768px) {
     width: 80%;
   }
 }
 
-// .ranking-container {
-//   @media screen and (min-width: 768px) {
-//     margin-top: 1.5rem;
-//   }
-// }
-
 .post-index-box {
   margin-bottom: 3rem;
   @media screen and (min-width: 768px) {
     display: flex;
-    // margin-top: 1rem;
   }
 }
 
-.postnew-box {
-  // margin-top: 5rem;
-}
-
-
-// 項目
+// 項目 //////////////////////////////
 
 .subject-box {
   margin-bottom: 1.2rem;
@@ -67,7 +54,7 @@
   right: 7px;
 }
 
-// 投稿内容
+// 投稿内容 //////////////////////////////
 
 .index-post-bungus {
   display: flex;
@@ -134,7 +121,8 @@
   }
 }
 
-// いいねのハート
+// いいねのハート //////////////////////////////
+
 .fas.fa-heart, .far.fa-heart {
   color: red;
   font-size: 1.3rem;
@@ -157,19 +145,17 @@
   border: dashed 2px #fff;
   border-radius: 8px;
   display: inline-block;
-  // p {
-  //   margin: 0;
-  //   padding: 0;
-  // }
 }
 
-// 投稿をもっと見るリンク
+// 投稿をもっと見るリンク //////////////////////////////
+
 .post-link p {
   color: white;
   margin-bottom: 0;
 }
 
-// ソート機能
+// ソート機能 //////////////////////////////
+
 .sort-box {
   width: 94%;
   margin: 0 auto;
@@ -179,18 +165,14 @@
   }
 }
 
-select#key, #post_bungu_key {
-  // border-radius: 100px;
-  // background-color: pink;
-}
-
 .sort-action {
   background-color: pink;
   background-color: lightgray;
   border: none;
 }
 
-// キーワード検索
+// キーワード検索 //////////////////////////////
+
 .keyword-search-box {
   text-align: center;
   margin-top: 2rem;
@@ -199,7 +181,6 @@ select#key, #post_bungu_key {
 }
 
 #scope {
-  // width: 10%;
   background-color: #ee7b1a;
   border: none;
   height: 2rem;
@@ -208,7 +189,6 @@ select#key, #post_bungu_key {
 }
 
 #word {
-  // width: 45%;
   background-color: lightgray;
   border: none;
   height: 2rem;
@@ -225,14 +205,17 @@ select#key, #post_bungu_key {
   color: #fff;
   border-radius: 5px;
 }
-// ジャンル機能
+
+// ジャンル機能 //////////////////////////////
+
 .genre-table {
   @media screen and (max-width: 768px) {
     display: none;
   }
 }
 
-// ランキング
+// ランキング //////////////////////////////
+
 .ranking-container {
   margin-top: 1rem;
   margin-bottom: 4rem;
@@ -278,14 +261,7 @@ select#key, #post_bungu_key {
   border-radius: 5px;
 }
 
-
-// new.html ///////////////////////////////
-
-.new-post-box {
-  // background-image: url('bungu.jpg');
-  // background-size:  cover;
-  // padding-top: 2rem;
-}
+// 文房具新規投稿ページ(new.html.erb) ///////////////////////////////
 
 .stationery-img-box {
   text-align: center;
@@ -302,15 +278,6 @@ select#key, #post_bungu_key {
 .newpost-index {
   position: relative;
 }
-
-// .admin-comment {
-//   position: absolute;
-//   top: 6rem;
-//   left: 10rem;
-//   font-size: 1.2rem;
-//   text-align: center;
-//   font-weight: bold;
-// }
 
 .newpost {
   padding-top: 1rem;
@@ -355,11 +322,7 @@ select#key, #post_bungu_key {
   color: #fff;
 }
 
-// .manufacturer-radiobtn {
-
-// }
-
-// show.html ///////////////////////////////
+// 文房具詳細ページ(show.html.erb) ///////////////////////////////
 
 .show-post-box {
   padding-top: 2.5rem;
@@ -383,11 +346,6 @@ select#key, #post_bungu_key {
 .catchphrase-heading {
   text-align: center;
 }
-
-// .display {
-//   margin: 0 auto;
-//   width: 90%;
-// }
 
 .show-image {
   margin-bottom: 2rem;
@@ -421,12 +379,9 @@ select#key, #post_bungu_key {
 }
 
 .editdestroy-btn-box {
-  // margin-left: auto;
   display: flex;
-  // margin-top: 3rem;
   justify-content: space-between;
   width: 30%;
-  // padding-right: 1rem;
   margin-bottom: 1rem;
   @media screen and (min-width: 768px) {
     width: 17%;
@@ -447,7 +402,8 @@ select#key, #post_bungu_key {
   border-radius: 5px;
 }
 
-// serch/finder/genreページの上部padding
+// serch/finder/genreページの上部padding //////////////////////////////
+
 .bunbougu-box {
   margin-top: 2rem;
   margin-bottom: 3rem;
