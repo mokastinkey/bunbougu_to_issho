@@ -1,20 +1,15 @@
 <div class="new-devise">
-
   <h5>新規会員登録</h5>
-
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
-
     <div class="field">
       <%= f.label :ニックネーム %><br>
       <%= f.text_field :nickname, autofocus: true%>
     </div>
-
     <div class="field">
       <%= f.label :メールアドレス %><br>
       <%= f.email_field :email, autocomplete: "off" %>
     </div>
-
     <div class="field">
       <%= f.label :パスワード %>
       <% if @minimum_password_length %>
@@ -22,12 +17,10 @@
       <% end %><br>
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
-
     <div class="field">
       <%= f.label :パスワード確認 %><br>
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
-
     <div class="action">
       <%= f.submit "登録", class: "action-signup" %>
     </div>
