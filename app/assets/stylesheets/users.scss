@@ -2,10 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// indexページ ////////////////////////////
+// indexページ //////////////////////////////
+
 .user-all-box {
   @media screen and (min-width: 768px) {
-    // display: flex;
     width: 95%;
     margin: 0 auto;
   }
@@ -28,11 +28,9 @@
   align-items: center;
   display: flex;
   img {
-  // max-width: 100%;
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  // object-fit: cover;
   }
 }
 
@@ -55,7 +53,6 @@
     width: 20%;
     display: block;
     text-align: center;
-    // position: fixed;
   }
   img {
     border-radius: 50%;
@@ -92,16 +89,11 @@
   }
 }
 
-// .me-box p {
-//   display: inline-block;
-// }
+// showページ //////////////////////////////
 
-// showページ ////////////////////////////
 .profile-container {
   margin-top: 2rem;
   @media screen and (min-width: 768px) {
-    // display: flex;
-    // justify-content: space-evenly;
   }
 }
 
@@ -132,10 +124,8 @@
 }
 
 .profile-nickname {
-  // padding-bottom: 0.4rem;
   text-align: center;
   margin: 0;
-  // margin-bottom: 0.4rem;
 }
 
 .follow-check {
@@ -147,10 +137,6 @@
 .follow-mark {
   font-size: 0.7rem;
 }
-
-// .no-margin {
-//     margin: 0;
-//   }
 
 .follow-number {
   padding-left: 1.2rem;
@@ -198,7 +184,6 @@
     position: absolute;
     display: inline-block;
     top: -13px;
-    /* left: 10px; */
     padding: 0 9px;
     line-height: 1;
     font-size: 0.9rem;
@@ -206,14 +191,6 @@
     color: green;
     font-weight: bold;
   }
-}
-
-.intro-box p {
-
-}
-
-.my-profile {
-  // display: flex;
 }
 
 .profile-top img {
@@ -242,7 +219,7 @@
   color: #fff;
 }
 
-// editページ ////////////////////////////
+// editページ //////////////////////////////
 
 .user-card-box {
   width : 90%;
