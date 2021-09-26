@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-
   def index
     @post_bungus = current_user.like_post_bungus
     @user = current_user

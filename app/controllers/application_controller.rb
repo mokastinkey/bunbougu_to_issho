@@ -11,5 +11,4 @@ class ApplicationController < ActionController::Base
   def application
     @genres = Genre.all
   end
-
 end

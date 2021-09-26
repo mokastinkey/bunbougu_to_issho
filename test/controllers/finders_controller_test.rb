@@ -5,5 +5,4 @@ class FindersControllerTest < ActionDispatch::IntegrationTest
     get finders_finder_url
     assert_response :success
   end
-
 end

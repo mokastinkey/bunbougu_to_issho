@@ -2,7 +2,7 @@ class PostBungusController < ApplicationController
   # url直打ち防止
   before_action :correct_user, only: [:edit, :update]
   # 文房具詳細画面(show.html)を見るには、ログインしていないといけない。indexとsearchはログインしていなくても見ることが可能
-  before_action :authenticate_user!,except: [:index, :search]
+  before_action :authenticate_user!, except: [:index, :search]
 
   def index
     @post_bungus = PostBungu.limit(8).order("created_at DESC")
@@ -53,7 +53,7 @@ class PostBungusController < ApplicationController
 
   def search
     @selection = params[:key]
-    if not @selection
+    if !@selection
       @post_bungus = PostBungu.page(params[:page]).reverse_order.per(6)
     elsif @selection == 'new' || @selection == 'old'
       @post_bungus = PostBungu.sort(@selection).page(params[:page]).per(6)
@@ -61,7 +61,7 @@ class PostBungusController < ApplicationController
       post_bungus = PostBungu.sort(@selection)
       @post_bungus = Kaminari.paginate_array(post_bungus).page(params[:page]).per(6)
     end
-  # @post_bungus = PostBungu.sort(@selection)
+    # @post_bungus = PostBungu.sort(@selection)
   end
 
   private
@@ -87,5 +87,4 @@ class PostBungusController < ApplicationController
       redirect_to post_bungus_path
     end
   end
-
 end

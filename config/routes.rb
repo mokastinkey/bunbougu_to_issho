@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'finders/finder'
   get 'genres/show'
   root to: 'post_bungus#index'
@@ -9,16 +8,16 @@ Rails.application.routes.draw do
 
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
   delete 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'
-  get 'users/following/:id', to: 'users#following', as:'users_following'
-  get 'users/follower/:id', to: 'users#follower', as:'users_follower'
+  get 'users/following/:id', to: 'users#following', as: 'users_following'
+  get 'users/follower/:id', to: 'users#follower', as: 'users_follower'
 
   resources :post_bungus do
     resources :post_comments, only: [:create, :destroy]
   end
 
-  #ジャンル検索
+  # ジャンル検索
   resources :genres, only: [:show]
-  #キーワード検索
+  # キーワード検索
   get 'finder' => "finders#finder"
   post 'finder' => "finders#finder"
 
@@ -27,5 +26,4 @@ Rails.application.routes.draw do
   get 'like/:id' => "likes#index", as: 'my_like'
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
-
 end

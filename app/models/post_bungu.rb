@@ -3,13 +3,13 @@ class PostBungu < ApplicationRecord
     self.other_manufacturer = nil unless manufacturer == "other"
   end
 
-  #Userモデルとの関係
+  # Userモデルとの関係
   belongs_to :user
 
-  #Genreモデルとの関係
+  # Genreモデルとの関係
   belongs_to :genre
 
-  #PostBunguモデルとの関係
+  # PostBunguモデルとの関係
   has_many :bungu_images, dependent: :destroy
   accepts_attachments_for :bungu_images, attachment: :image
 
@@ -20,7 +20,7 @@ class PostBungu < ApplicationRecord
     mitsubishi_pencil: 3,
     pilot: 4,
     pentel: 5,
-    other: 6
+    other: 6,
   }
 
   with_options presence: true do
@@ -37,29 +37,27 @@ class PostBungu < ApplicationRecord
     manufacturer == "other"
   end
 
-  #PostCommentモデル
+  # PostCommentモデル
   has_many :post_comments, dependent: :destroy
 
-  #Likeモデルとの関係
+  # Likeモデルとの関係
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
   def self.sort(selection)
-    if selection == 'new' then
+    if selection == 'new'
       all.order(created_at: :DESC)
-    elsif selection == 'old' then
+    elsif selection == 'old'
       all.order(created_at: :ASC)
-    elsif selection == 'manylikes' then
+    elsif selection == 'manylikes'
       find(Like.group(:post_bungu_id).order(Arel.sql('count(post_bungu_id) desc')).pluck(:post_bungu_id))
     else
-     　all.order(created_at: :DESC)
+      　all.order(created_at: :DESC)
     end
   end
 
-  #キーワード検索
+  # キーワード検索
   def self.looks(word)
     where("bungu_name LIKE ?", "%#{word}%")
   end
-
-
 end

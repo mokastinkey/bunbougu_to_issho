@@ -67,7 +67,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-#devise
+# devise
 gem 'devise'
 
 # 画像投稿用gem
@@ -75,21 +75,21 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 # 画像加工用（サイズ調整など）gem
 gem "refile-mini_magick"
 
-#enum導入
+# enum導入
 gem "enum_help"
 gem 'rails-i18n', '~> 5.1'
 
-#jquery導入
+# jquery導入
 gem 'jquery-rails'
 
-#fontawesome導入
+# fontawesome導入
 gem 'font-awesome-sass', '~> 5.13'
 
-#pry-byebugインストール
+# pry-byebugインストール
 gem 'pry-byebug'
 
-#bootstrap導入
+# bootstrap導入
 gem 'bootstrap', '~> 4.5'
 
-#kaminariインストール
-gem 'kaminari','~> 1.2.1'
+# kaminariインストール
+gem 'kaminari', '~> 1.2.1'
