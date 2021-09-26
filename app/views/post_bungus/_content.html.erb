@@ -20,7 +20,6 @@
           <p class="bungu-name">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
         <% end %>
       </div>
-
       <div>
         <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
           <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
