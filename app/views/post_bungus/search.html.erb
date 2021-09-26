@@ -13,7 +13,6 @@
           <p class="subject-name">文房具</p>
         <% end %>
       </div>
-
       <div class="sort-box">
         <%= form_with model: @post_bungu, url: search_path, method: :get, local: true do |f| %>
           <%= f.select :key, [
@@ -24,19 +23,14 @@
           <%= f.submit "並び替える", class: "sort-action" %>
         <% end %>
       </div>
-
       <div class="index-post-bungus">
         <%= render 'post_bungus/content', post_bungus: @post_bungus %>
       </div>
       <%= paginate @post_bungus %>
     </div>
-
     <!--キーワード検索-->
     <%= render 'keyword' %>
-
   </div>
-
   <!-- ジャンル検索-->
   <%= render "genre" %>
-
 </div>
