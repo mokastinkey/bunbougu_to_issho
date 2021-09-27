@@ -21,15 +21,21 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- font-family: 'logotype'; 
+ font-family: 'logotype';
  font-size: 1rem;
  text-decoration: none;
  list-style: none;
  color: #001e43;
 }
 
-a:visited {
- color: black;
+a {
+  text-decoration:none;
+  color: #001e43;
+}
+
+a:visited, a:hover{
+ color: #001e43;
+ text-decoration:none;
 }
 
 main {
