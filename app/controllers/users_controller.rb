@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
+  # url直打ち防止
+  before_action :correct_user, only: [:edit, :update]
+
   def show
     @user = User.find(params[:id])
     @post_bungus = @user.post_bungus.order(created_at: :desc)
@@ -44,4 +47,12 @@ class UsersController < ApplicationController
   def user_edit_params
     params.require(:user).permit(:nickname, :profile_image, :self_introduction)
   end
+
+  def correct_user
+    user = User.find(params[:id])
+    if current_user.id != user.id
+      redirect_to users_path
+    end
+  end
+
 end
