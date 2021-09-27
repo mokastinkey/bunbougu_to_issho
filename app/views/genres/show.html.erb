@@ -38,6 +38,7 @@
     <div class="index-post-bungus">
       <%= render 'post_bungus/content', post_bungus: @post_bungus %>
     </div>
+    <%= paginate @post_bungus %>
     <!--キーワード検索-->
     <%= render 'post_bungus/keyword' %>
   </div>
