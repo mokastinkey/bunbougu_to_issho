@@ -24,10 +24,14 @@ document.addEventListener("turbolinks:load", function () {
 
   $(document).ready(function(){
 
+　　// ハンバーガーメニュー
+
     $("#nav-button").on("click", function(){
        $(".sp-nav").slideToggle();
      　$("#mask").toggleClass('active')
     });
+
+　　// スライドショー
 
     $("#slide-images").skippr({
     // スライドショーの変化 ("fade" or "slide")
@@ -52,7 +56,19 @@ document.addEventListener("turbolinks:load", function () {
     hidePrevious : false
     });
 
-  });
+   // 文房具カードマウスオーバー時のイベント
 
+    $('.bungu').mouseover(function(){
+      $(this).css({
+        'box-shadow': '0 0 10px rgb(42 112 56 / 80%)',
+      });
+    })
+    $('.bungu').mouseout(function(){
+      $('.bungu').css({
+          'box-shadow': '0 0 1.3rem rgb(0 0 0 / 10%)'
+      });
+    })
+
+  });
 });
 
