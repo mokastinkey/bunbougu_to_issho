@@ -15,7 +15,7 @@
         <div class="newpost">
           <div>
             <div class="newpost-form-box">
-              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 文房具のキャッチフレーズ</p>
+              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 文房具のキャッチフレーズ<span class="required">必須</span></p>
               <p>例) 文房具点で一目惚したが素敵な手帳！ など</p>
               <%= f.text_area :catchphrase, autofocus: true, size: "40X40" %>
             </div>
@@ -25,11 +25,11 @@
               <%= f.attachment_field :bungu_images_images, multiple: true %>
             </div>
             <div class="newpost-form-box">
-              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 商品名</p>
+              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 商品名<span class="required">必須</span></p>
               <%= f.text_area :bungu_name, size: "40X40" %>
             </div>
             <div class="newpost-form-box">
-              <p class="newpost-heading"><i class="fas fa-paperclip"></i> ジャンル</p>
+              <p class="newpost-heading"><i class="fas fa-paperclip"></i> ジャンル<span class="required">必須</span></p>
               <%= f.collection_select :genre_id, Genre.all, :id, :name, { prompt: "選択してください" } %>
             </div>
             <div class="newpost-form-box">
@@ -41,12 +41,12 @@
           <div>
             <div class="newpost-form-box">
               <div id="rate-stars">
-                <p class="newpost-heading"><i class="fas fa-paperclip"></i> 評価</p>
+                <p class="newpost-heading"><i class="fas fa-paperclip"></i> 評価<span class="required">必須</span></p>
                 <%= render 'post_bungus/star' %>
               </div>
             </div>
             <div class="newpost-form-box">
-              <p class="newpost-heading"><i class="fas fa-paperclip"></i> メーカー</p>
+              <p class="newpost-heading"><i class="fas fa-paperclip"></i> メーカー<span class="required">必須</span></p>
               <% PostBungu.manufacturers_i18n.each do |value, manufacturer| %>
                 <div>
                   <label>
@@ -60,11 +60,11 @@
               </div>
             </div>
             <div class="newpost-form-box">
-              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 値段</p>
+              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 値段<span class="required">必須</span></p>
               <%= f.text_field :price %> 円
             </div>
             <div class="newpost-form-box">
-              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 購入場所</p>
+              <p class="newpost-heading"><i class="fas fa-paperclip"></i> 購入場所<span class="required">必須</span></p>
               <%= f.text_area :place, size: "40X40" %>
             </div>
           </div>

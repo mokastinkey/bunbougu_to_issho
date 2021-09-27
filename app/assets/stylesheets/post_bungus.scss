@@ -322,6 +322,15 @@
   color: #fff;
 }
 
+.required {
+  margin-left: 1rem;
+  padding: 0.2rem;
+  background-color: tomato;
+  border-radius: 5px;
+  color: #ffffe0;
+  font-size: 0.9rem;
+}
+
 // 文房具詳細ページ(show.html.erb) ///////////////////////////////
 
 .show-post-box {
