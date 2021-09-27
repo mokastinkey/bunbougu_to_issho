@@ -9,6 +9,7 @@ ja:
       post_bungu:
         bungu_name: 商品名
         catchphrase: 文房具のキャッチフレーズ
+        genre: ジャンル
         rate: 星評価
         price: 購入金額
         place: 購入場所
