@@ -3,6 +3,9 @@
     <div class="show-post-box">
       <div class="show-bungu-heading">
         <div class="editdestroy-btn-box">
+          <%= link_to search_path do %>
+            <p class="reverse-btn">投稿一覧へ戻る</p>
+          <% end %>
           <% if @post_bungu.user_id == current_user.id %>
             <%= link_to edit_post_bungu_path(@post_bungu) do %>
               <p class="edit-btn">編集</p>

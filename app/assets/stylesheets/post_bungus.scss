@@ -389,10 +389,11 @@
 .editdestroy-btn-box {
   display: flex;
   justify-content: space-between;
-  width: 30%;
-  margin-bottom: 1rem;
+  margin: 0 auto;
+  width: 70%;
+  margin-bottom: 2rem;
   @media screen and (min-width: 768px) {
-    width: 17%;
+    width: 60%;
   }
 }
 
@@ -405,7 +406,14 @@
 
 .destroy-btn {
   padding: 0.4rem;
-  background-color: orangered;
+  background-color: tomato;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.reverse-btn {
+  padding: 0.4rem;
+  background-color: lightgray;
   color: #fff;
   border-radius: 5px;
 }
