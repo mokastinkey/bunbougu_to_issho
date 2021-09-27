@@ -10,7 +10,7 @@
             <%= link_to edit_post_bungu_path(@post_bungu) do %>
               <p class="edit-btn">編集</p>
             <% end %>
-            <%= link_to post_bungu_path(@post_bungu), method: :delete do %>
+            <%= link_to post_bungu_path(@post_bungu), method: :delete, data: { confirm: '本当に投稿を削除しますか？' } do %>
               <p class="destroy-btn">削除</p>
             <% end %>
           <% end %>
