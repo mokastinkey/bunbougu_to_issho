@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: current_user).order(Arel.sql('RANDOM()')).page(params[:page]).per(2)
+    @users = User.where.not(id: current_user).order(Arel.sql('RANDOM()')).page(params[:page]).per(50)
     @user = current_user
   end
 
@@ -15,14 +15,14 @@ class UsersController < ApplicationController
     @login_user = current_user
     # 自分がフォローしているユーザー一覧
     @user = User.find(params[:id])
-    @users = @user.following_user.where.not(id: current_user.id).page(params[:page]).per(1)
+    @users = @user.following_user.where.not(id: current_user.id).page(params[:page]).per(50)
   end
 
   def follower
     @login_user = current_user
     # @userをフォローしているユーザー
     @user = User.find(params[:id])
-    @users = @user.follower_user.page(params[:page]).per(1)
+    @users = @user.follower_user.page(params[:page]).per(50)
     # 上の続き where.not(id: current_user.id)
   end
 
