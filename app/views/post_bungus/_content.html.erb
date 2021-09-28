@@ -3,7 +3,7 @@
     <div class="bungu-photo">
       <% if post_bungu.bungu_images.present? %>
         <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-          <%= attachment_image_tag bungu_image, :image %>
+          <%= attachment_image_tag bungu_image, :image, format: 'jpeg' %>
         <% end %>
       <%else %>
         <%= image_tag 'test.jpg', size: '200x200' %>
