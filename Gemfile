@@ -93,3 +93,11 @@ gem 'bootstrap', '~> 4.5'
 
 # kaminariインストール
 gem 'kaminari', '~> 1.2.1'
+
+# 環境変数を管理するgem(データベースの接続設定で利用)
+gem 'dotenv-rails'
+
+# 本番環境でmysqlを使用するため
+group :production do
+  gem 'mysql2'
+end
