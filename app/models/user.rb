@@ -2,11 +2,14 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 10 }
   validates :email, presence: true, uniqueness: true
-
+  
+  # snsモデル
+  has_many :sn
+  
   # PostBunguモデル
   has_many :post_bungus, dependent: :destroy
   attachment :profile_image
