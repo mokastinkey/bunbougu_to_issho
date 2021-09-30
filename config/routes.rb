@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   get 'genres/show'
   root to: 'post_bungus#index'
   get 'homes/about'
-  devise_for :users
+  
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+  
   resources :users, only: [:index, :show, :edit, :update]
 
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
