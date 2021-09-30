@@ -97,6 +97,9 @@ gem 'kaminari', '~> 1.2.1'
 # 環境変数を管理するgem(データベースの接続設定で利用)
 gem 'dotenv-rails'
 
+# Google認証
+gem 'omniauth-google-oauth2'
+
 # 本番環境でmysqlを使用するため
 group :production do
   gem 'mysql2'
