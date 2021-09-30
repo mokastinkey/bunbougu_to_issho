@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   
   # snsモデル
-  has_many :sn
+  has_many :google
   
   # PostBunguモデル
   has_many :post_bungus, dependent: :destroy
