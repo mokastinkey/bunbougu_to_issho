@@ -31,15 +31,15 @@
                     <div class="rank-bungu-index">
                       <%= link_to post_bungu_path(post_bungu) do %>
                         <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
-                        <p class="bungu-name-rank">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
+                        <p class="bungu-name-rank">「 <%= post_bungu.bungu_name.truncate(17) %> 」</p>
                       <% end %>
                     </div>
                     <% if post_bungu.bungu_images.present? %>
                       <% post_bungu.bungu_images.first(1).each do |bungu_image| %>
-                        <%= attachment_image_tag bungu_image, :image %>
+                        <%= attachment_image_tag bungu_image, :image, size: '70x70' %>
                       <% end %>
                     <%else %>
-                      <%= image_tag 'test.jpg', size: '80x80' %>
+                      <%= image_tag 'test.jpg', size: '70x70' %>
                     <% end %>
                   </div>
                 </div>

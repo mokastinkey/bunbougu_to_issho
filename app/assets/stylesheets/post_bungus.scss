@@ -260,6 +260,12 @@
   border-radius: 5px;
 }
 
+.rank-flex {
+  @media screen and (min-width: 768px) {
+  width: 33%;
+  }
+}
+
 // 文房具新規投稿ページ(new.html.erb) ///////////////////////////////
 
 .stationery-img-box {
