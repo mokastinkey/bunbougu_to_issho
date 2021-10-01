@@ -2,10 +2,13 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
-  validates :nickname, presence: true, uniqueness: true, length: { maximum: 10 }
+  validates :nickname, presence: true, length: { maximum: 10 }
   validates :email, presence: true, uniqueness: true
+
+  # snsモデル
+  has_many :google
 
   # PostBunguモデル
   has_many :post_bungus, dependent: :destroy
@@ -66,4 +69,13 @@ class User < ApplicationRecord
   # def unlike(post_bungu)
   #   like_post_bungus.delete(post_bungu)
   # end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.nickname = auth.info.name
+    end
+  end
 end
