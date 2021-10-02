@@ -20,21 +20,21 @@
           <p class="bungu-name">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
         <% end %>
       </div>
-      <div>
-        <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
-          <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
-              <p class="like-count"><%= post_bungu.likes.count %> Like !</i></p>
-          <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
-            <div id="btn_<%= post_bungu.id %>">
-              <% if current_user.liked_by?(post_bungu) %>
-                <%= render 'likes/unlike_button', post_bungu: post_bungu %>
-              <% else %>
-                <%= render 'likes/like_button', post_bungu: post_bungu %>
-              <% end %>
-            </div>
-          <% end %>
+    </div>
+    <div class="like-show-box">
+      <% if user_signed_in? %>  <!--ログインしているユーザだけが、見ることができる -->
+        <% if current_user.own?(post_bungu) %> <!--自分の(currentuserの)文房具投稿の場合 -->
+            <p class="like-count"><%= post_bungu.likes.count %> Like !</i></p>
+        <% else %>  <!--他の人の(currentuser以外の)文房具投稿の場合 -->
+          <div id="btn_<%= post_bungu.id %>">
+            <% if current_user.liked_by?(post_bungu) %>
+              <%= render 'likes/unlike_button', post_bungu: post_bungu %>
+            <% else %>
+              <%= render 'likes/like_button', post_bungu: post_bungu %>
+            <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 <% end %>
