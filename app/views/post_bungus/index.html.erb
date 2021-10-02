@@ -12,10 +12,10 @@
     <!-- ランキング -->
     <div class="ranking-container">
       <div class="subject-box">
-        <p class="subject-name">注目の文房具</p>
+        <p class="subject-name">月間 注目文房具</p>
       </div>
       <div class="rank-flex-box">
-        <% @week_like_ranks.each.with_index(1) do |post_bungu, i| %>
+        <% @month_like_ranks.each.with_index(1) do |post_bungu, i| %>
           <div class="rank-flex">
             <div class="rank-number">
               <p><i class="fas fa-medal"></i> No.<%= i %></p>
