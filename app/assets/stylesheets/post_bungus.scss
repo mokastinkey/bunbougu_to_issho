@@ -119,7 +119,7 @@
 
 .bungu-name {
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   @media screen and (min-width: 768px) {
     font-size: 1.4rem;
   }
@@ -363,11 +363,12 @@
 
 .post-day {
   text-align: right;
-  margin-bottom: 3rem;
+  margin: 3rem 0;
 }
 
 .catchphrase-heading {
   text-align: center;
+  font-size: 0.9rem;
 }
 
 .show-image {
