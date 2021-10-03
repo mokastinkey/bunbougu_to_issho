@@ -6,28 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(
-  [
-    {
-      nickname: 'テスト1',
-      email: 'test1@test.com',
-      password: 'testtest',
-      self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
-    },
-    {
-      nickname: 'テスト2',
-      email: 'test2@test.com',
-      password: 'testtest',
-      self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
-    },
-    {
-      nickname: 'テスト3',
-      email: 'test3@test.com',
-      password: 'testtest',
-      self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
-    }
-  ]
-)
+# User.create!(
+#   [
+#     {
+#       nickname: 'テスト1',
+#       email: 'test1@test.com',
+#       password: 'testtest',
+#       self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
+#     },
+#     {
+#       nickname: 'テスト2',
+#       email: 'test2@test.com',
+#       password: 'testtest',
+#       self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
+#     },
+#     {
+#       nickname: 'テスト3',
+#       email: 'test3@test.com',
+#       password: 'testtest',
+#       self_introduction: 'こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。こんにちは。'
+#     }
+#   ]
+# )
 
 Genre.create!(
   [
@@ -48,132 +48,132 @@ Genre.create!(
   ]
 )
 
-PostBungu.create!(
-  [
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 1,
-      genre_id: 1,
-      bungu_name: 'kurutoga',
-      manufacturer: 2,
-      catchphrase: '書いても書いてもとんがっている！',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 390,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 2,
-      genre_id: 7,
-      bungu_name: 'ロルバーン手帳',
-      manufacturer: 2,
-      catchphrase: '表紙が可愛い！書きたくなる手帳',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 1210,
-      place: 'ロフト渋谷'
-    },
-    {
-      user_id: 2,
-      genre_id: 7,
-      bungu_name: 'ロルバーン手帳',
-      manufacturer: 2,
-      catchphrase: '表紙が可愛い！書きたくなる手帳',
-      rate: 5,
-      thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
-      price: 1210,
-      place: 'ロフト渋谷'
-    }
-  ]
-)
+# PostBungu.create!(
+#   [
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 1,
+#       genre_id: 1,
+#       bungu_name: 'kurutoga',
+#       manufacturer: 2,
+#       catchphrase: '書いても書いてもとんがっている！',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 390,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 2,
+#       genre_id: 7,
+#       bungu_name: 'ロルバーン手帳',
+#       manufacturer: 2,
+#       catchphrase: '表紙が可愛い！書きたくなる手帳',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 1210,
+#       place: 'ロフト渋谷'
+#     },
+#     {
+#       user_id: 2,
+#       genre_id: 7,
+#       bungu_name: 'ロルバーン手帳',
+#       manufacturer: 2,
+#       catchphrase: '表紙が可愛い！書きたくなる手帳',
+#       rate: 5,
+#       thought: 'これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。これはテストです。',
+#       price: 1210,
+#       place: 'ロフト渋谷'
+#     }
+#   ]
+# )
 
-BunguImage.create!(
-  [
-    {
-      post_bungu_id: 1,
-      image: File.open('./app/assets/images/test_bungu1.jpeg')
-    },
-    {
-      post_bungu_id: 1,
-      image: File.open('./app/assets/images/test_bungu2.jpg')
-    }
-  ]
-)
+# BunguImage.create!(
+#   [
+#     {
+#       post_bungu_id: 1,
+#       image: File.open('./app/assets/images/test_bungu1.jpeg')
+#     },
+#     {
+#       post_bungu_id: 1,
+#       image: File.open('./app/assets/images/test_bungu2.jpg')
+#     }
+#   ]
+# )
 
 
