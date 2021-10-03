@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: current_user).order(Arel.sql('RANDOM()')).page(params[:page]).per(50)
+    @users = User.where.not(id: current_user).order(created_at: :desc).page(params[:page]).per(50)
     @user = current_user
   end
 
