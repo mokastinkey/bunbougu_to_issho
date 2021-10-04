@@ -30,8 +30,8 @@
                   <div class="bungu-detail-rank">
                     <div class="rank-bungu-index">
                       <%= link_to post_bungu_path(post_bungu) do %>
-                        <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
-                        <p class="bungu-name-rank">「 <%= post_bungu.bungu_name.truncate(17) %> 」</p>
+                        <p class="catch"><%= post_bungu.catchphrase.truncate(15) %></p>
+                        <p class="bungu-name-rank"><%= post_bungu.bungu_name.truncate(17) %></p>
                       <% end %>
                     </div>
                     <% if post_bungu.bungu_images.present? %>

@@ -17,7 +17,7 @@
       <div class="bungu-detail">
         <%= link_to post_bungu_path(post_bungu) do %>
           <p class="catch"><%= post_bungu.catchphrase.truncate(25) %></p>
-          <p class="bungu-name">「 <%= post_bungu.bungu_name.truncate(20) %> 」</p>
+          <p class="bungu-name"><%= post_bungu.bungu_name.truncate(20) %></p>
         <% end %>
       </div>
     </div>
