@@ -6,9 +6,10 @@
   border-top: 3px solid lightgray;
   width: 90%;
   margin: 1rem auto;
-  text-align: center;
+  background-color: #f1f1f1;
+  padding: 0 1rem;
   @media screen and (min-width: 768px) {
-    width: 20%;
+    width: 25%;
     border-top: 0;
     margin: 0;
     padding-top: 3rem;
@@ -18,35 +19,17 @@
 }
 
 .comment-create {
-  position: relative;
-  padding: 7px 10px;
-  min-width: 120px;
-  max-width: 100%;
-  color: #555;
-  font-size: 16px;
-  background: #eedcb3;
-  width: 50%;
-  margin: 2rem auto;
-  margin-bottom: 2rem;
-  border-radius: 10px;
+  text-align: center;
+  margin: 1rem auto;
   p {
     margin: 0;
     padding: 0;
   }
 }
 
-.comment-create:before {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -15px;
-  border: 15px solid transparent;
-  border-top: 15px solid #eedcb3;
-}
-
-.comment-top {
-  text-align: center;
+#comments_area {
+  margin: 0 auto;
+  width: 95%;
 }
 
 .comment-show {
@@ -55,6 +38,8 @@
   text-align: left;
   p {
     white-space: pre-wrap;
+    word-break: break-all;
+    font-size: 13px;
   }
 }
 
@@ -85,7 +70,7 @@
 
 .comment-action input {
   padding: 0.1rem 1rem;
-  background-color: #eedcb3; 
+  background-color: #e3e3e3;
   border: none;
   border-radius: 5px;
 }
