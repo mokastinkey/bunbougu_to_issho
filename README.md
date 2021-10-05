@@ -52,8 +52,6 @@
 * 文房具の購入前　　
 * 文房具を知りたい時
 
-## 設計書
-
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1Q3YUdjNgbRzPWMG-0cvqm028_jr5qCipmBf4lfNaCB8/edit?usp=sharing
 
@@ -63,3 +61,8 @@ https://docs.google.com/spreadsheets/d/1Q3YUdjNgbRzPWMG-0cvqm028_jr5qCipmBf4lfNa
 - フレームワーク：Ruby on Rails 5.2.6
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 開発環境
+- ハンコで遊ぶ(http://hankodeasobu.com/?s=stationery&x=0&y=0)
+- illustAC(https://www.ac-illust.com/main/detail.php?id=1041595&word=%E6%96%87%E6%88%BF%E5%85%B7%E6%89%8B%E6%9B%B8%E3%81%8D)
+- O-DAN(https://unsplash.com/s/photos/stationary)
