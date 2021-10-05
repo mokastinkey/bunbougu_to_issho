@@ -133,18 +133,18 @@
 
 .pc-genre {
   @media screen and (min-width: 768px) {
-    padding: 1rem;
-    padding-top: 0.5rem;
+    padding: 0.5rem;
     background-color: #f7f7f8;
     li {
       line-height: 2rem;
+      border-radius: 3px;
     }
   }
 }
 
 .pc-genre p {
   margin-bottom: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 // ハンバーガーメニュー背景色(jquery) //////////////////////////////
