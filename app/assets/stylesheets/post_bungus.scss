@@ -120,6 +120,7 @@
 .bungu-name {
   text-align: center;
   font-size: 1.2rem;
+  word-break: break-all;
   @media screen and (min-width: 768px) {
     font-size: 1.4rem;
   }
@@ -395,6 +396,7 @@
   margin: 2rem auto;
   p {
      white-space: pre-wrap;
+     word-break: break-all;
   }
 }
 
