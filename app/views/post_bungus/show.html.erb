@@ -40,7 +40,7 @@
           </tr>
           <tr>
             <th>値段</th>
-            <td><%= @post_bungu.price %><sapn> 円</span></td>
+            <td><%= @post_bungu.price.to_s(:delimited) %><sapn> 円</span></td>
           </tr>
           <tr>
             <th>購入場所</th>
