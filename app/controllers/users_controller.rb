@@ -18,7 +18,8 @@ class UsersController < ApplicationController
     @login_user = current_user
     # 自分がフォローしているユーザー一覧
     @user = User.find(params[:id])
-    @users = @user.following_user.where.not(id: current_user.id).page(params[:page]).per(50)
+    # @users = @user.following_user.where.not(id: current_user.id).page(params[:page]).per(50)
+    @users = @user.following_user.page(params[:page]).per(50)
   end
 
   def follower
