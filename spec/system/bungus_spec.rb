@@ -28,5 +28,15 @@ describe '投稿のテスト' do
       end
     end
   end
+  describe "新規投稿画面のテスト" do
+    before do
+      visit new_post_bungu_path
+    end
+    context '確認表示' do
+      it '投稿フォームが画面に表示されているか' do
+        expect(page).to have_field 'post_bungu[catchphrase]'
+      end
+    end
+  end
 
 end
