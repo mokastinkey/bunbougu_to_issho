@@ -37,6 +37,11 @@ class PostBungu < ApplicationRecord
     manufacturer == "other"
   end
 
+  # post_bungus_controllerでメソッド使用
+  def self.most_liked(n = 3)
+    where(id: Like.order_by_numbers_in_month.pluck(:post_bungu_id))
+  end
+
   # PostCommentモデル
   has_many :post_comments, dependent: :destroy
 
