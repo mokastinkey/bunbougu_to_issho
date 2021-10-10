@@ -16,8 +16,8 @@ class PostBungusController < ApplicationController
   end
 
   def create
-    @post_bungu = PostBungu.new(post_bungu_params)
-    @post_bungu.user_id = current_user.id
+    @post_bungu = PostBungu.new(post_bungu_params.merge(user_id: current_user.id))
+    # @post_bungu.user_id = current_user.id
     if @post_bungu.save
       redirect_to post_bungu_path(@post_bungu)
     else
