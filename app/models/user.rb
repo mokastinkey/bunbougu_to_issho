@@ -58,18 +58,8 @@ class User < ApplicationRecord
   def self.looks(word)
     where("nickname LIKE ?", "%#{word}%")
   end
-
-  # def like(post_bungu)
-  #   likes.find_by(post_bungu: post_bungu)
-  #   if likes.nil?
-  #     likes.create(post_bungu: post_bungu, user_id: current_user.id)
-  #   end
-  # end
-
-  # def unlike(post_bungu)
-  #   like_post_bungus.delete(post_bungu)
-  # end
-
+  
+  # google認証
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 
