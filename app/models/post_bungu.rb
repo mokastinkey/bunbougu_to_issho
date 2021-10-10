@@ -57,7 +57,7 @@ class PostBungu < ApplicationRecord
   end
 
   # キーワード検索
-  def self.looks(word)
-    where("bungu_name LIKE ?", "%#{word}%")
+  def self.bungu_like(bungu_name)
+    where("bungu_name LIKE ?", "%#{bungu_name}%")
   end
 end

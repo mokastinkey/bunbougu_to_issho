@@ -55,10 +55,10 @@ class User < ApplicationRecord
   end
 
   # キーワード検索
-  def self.looks(word)
-    where("nickname LIKE ?", "%#{word}%")
+  def self.nickname_like(nickname)
+    where("nickname LIKE ?", "%#{nickname}%")
   end
-  
+
   # google認証
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

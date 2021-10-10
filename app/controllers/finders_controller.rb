@@ -4,9 +4,9 @@ class FindersController < ApplicationController
     @word = params[:word]
 
     if @scope == 'User'
-      @users = User.looks(@word).page(params[:page]).reverse_order.per(30)
+      @users = User.nickname_like(@word).page(params[:page]).reverse_order.per(30)
     else
-      @post_bungus = PostBungu.looks(@word).page(params[:page]).reverse_order.per(30)
+      @post_bungus = PostBungu.bungu_like(@word).page(params[:page]).reverse_order.per(30)
     end
   end
 end
