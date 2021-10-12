@@ -7,7 +7,7 @@ class PostBungusController < ApplicationController
   def index
     @post_bungus = PostBungu.limit(9).order("created_at DESC")
     @genres = Genre.all
-    # ランキング
+    # いいねランキング
     @month_like_ranks = PostBungu.most_liked
   end
 
