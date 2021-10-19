@@ -63,28 +63,26 @@ describe 'ユーザログイン後の' do
       end
     end
 
-    context '投稿処理に関するテスト' do
-      before do
-        fill_in 'post_bungu[bungu_name]', with: Faker::Lorem.characters(number: 5)
-        fill_in 'post_bungu[catchphrase]', with: Faker::Lorem.characters(number: 20)
-        fill_in 'post_bungu[thought]', with: Faker::Lorem.characters(number: 20)
-        fill_in 'post_bungu[price]', with: Faker::Number.between(to: 5000)
-        fill_in 'post_bungu[place]', with: Faker::Lorem.characters(number: 5)
+    # context '投稿処理に関するテスト' do
+    #   before do
+    #     fill_in 'post_bungu[bungu_name]', with: Faker::Lorem.characters(number: 5)
+    #     fill_in 'post_bungu[catchphrase]', with: Faker::Lorem.characters(number: 20)
+    #     fill_in 'post_bungu[thought]', with: Faker::Lorem.characters(number: 20)
+    #     fill_in 'post_bungu[price]', with: Faker::Number.between(to: 5000)
+    #     fill_in 'post_bungu[place]', with: Faker::Lorem.characters(number: 5)
         
 
-        choose 'コクヨ'
-        expect(page).to have_checked_field 'コクヨ'
-        # select 'シャープペンシル類', from: 'post_bungu[genre_id]'
-        find("#post_bungu_genre_id").find("option[value='1']").select_option
-        find('#rate-stars').find("img[alt='4']").click
-        # fill_in 'post_bungu[rate]', with: Faker::Number.between(from: 1, to: 5)
-      end
+    #     choose 'コクヨ'
+    #     expect(page).to have_checked_field 'コクヨ'
+    #     find("#post_bungu_genre_id").find("option[value='1']").select_option
+    #     find('#rate-stars').find("img[alt='4']").click
+    #   end
 
-      it '新しい投稿が正しく保存される' do
-        click_button '投稿する'
-        expect(current_path).to eq post_bungu_path(PostBungu.last)
-      end
-    end
+    #   it '新しい投稿が正しく保存される' do
+    #     click_button '投稿する'
+    #     expect(current_path).to eq post_bungu_path(PostBungu.last)
+    #   end
+    # end
   end
 
 end
